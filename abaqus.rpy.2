@@ -1,0 +1,1165 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2019 replay file
+# Internal Version: 2018_09_24-14.41.51 157541
+# Run by chs17004 on Tue Oct  6 12:00:42 2020
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=356.125030517578, 
+    height=249.75)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('Pressure_Box With Holes.cae')
+#: The model database "C:\Users\chs17004\Downloads\Pressure_Box With Holes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       26
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.54846, 
+    farPlane=2.66507, width=1.0234, height=0.603719, cameraPosition=(2.44825, 
+    0.480792, 0.0397415), cameraUpVector=(-0.434212, 0.714088, -0.549125), 
+    cameraTarget=(0.401212, 0.0910828, -0.11687))
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p1 = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.seedPart(size=0.025, minSizeFactor=0.9)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+p1 = mdb.models['Model-1'].parts['Cap']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Cap']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Cap']
+p.seedPart(size=0.025, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Cap']
+p.generateMesh()
+p1 = mdb.models['Model-1'].parts['Long_Side']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Long_Side']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Long_Side']
+p.seedPart(size=0.025, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Long_Side']
+p.generateMesh()
+p1 = mdb.models['Model-1'].parts['Short Side With Holes']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Short Side With Holes']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Short Side With Holes']
+p.seedPart(size=0.025, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Short Side With Holes']
+p.generateMesh()
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Error in job Pressure_Box_With_Holes: Normal cannot be computed in 17 elements. The nodal coordinates may be incorrect or the element aspect ratio may exceed 1000 to 1. The elements have been identified in element set ErrElemNormal.
+#: Error in job Pressure_Box_With_Holes: The geometry of 16 elements is too distorted. Check the nodal coordinates or node numbering on elements identified in element set ErrElemDistorted.
+#: Error in job Pressure_Box_With_Holes: The area of 9 elements is zero, small, or negative. Check coordinates or node numbering, or modify the mesh seed. The elements have been identified in element set ErrElemAreaSmallNegZero.
+#: Error in job Pressure_Box_With_Holes: Error in defining normal to the element surface at a node in 17 elements. The elements have been identified in element set ErrElemShellNormal.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       31
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.58998, 
+    farPlane=2.64977, width=1.01574, height=0.619907, cameraPosition=(2.47754, 
+    0.328119, -0.230726), cameraUpVector=(-0.449615, 0.835154, -0.316803), 
+    cameraTarget=(0.404632, 0.0877596, -0.121142))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.6241, 
+    farPlane=2.65367, width=1.03754, height=0.633212, cameraPosition=(1.50167, 
+    -1.23205, 1.10151), cameraUpVector=(0.594455, 0.397153, -0.699209), 
+    cameraTarget=(0.39073, 0.0655345, -0.102164))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55481, 
+    farPlane=2.68359, width=0.993272, height=0.606196, cameraPosition=(2.07481, 
+    0.909774, 0.863383), cameraUpVector=(0.167891, -0.025356, -0.985479), 
+    cameraTarget=(0.403917, 0.114816, -0.107643))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.78647, 
+    farPlane=2.47889, width=1.14127, height=0.737649, cameraPosition=(0.67264, 
+    -1.99176, -0.244018), cameraUpVector=(-0.139433, 0.371407, -0.917941), 
+    cameraTarget=(0.384384, 0.0743962, -0.12307))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.58385, 
+    farPlane=2.67707, width=1.01183, height=0.653988, cameraPosition=(-1.14541, 
+    -0.407155, -1.51754), cameraUpVector=(0.869369, -0.400763, -0.289112), 
+    cameraTarget=(0.347721, 0.106351, -0.148752))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.59184, 
+    farPlane=2.63419, width=0.960223, height=0.620633, cameraPosition=(1.91219, 
+    0.422067, -1.52907), cameraUpVector=(-0.651051, 0.758709, -0.022227), 
+    cameraTarget=(0.404633, 0.0877599, -0.121141))
+mdb.models['Model-1'].constraints['Constraint-7'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+#: Error in job Pressure_Box_With_Holes: Normal cannot be computed in 17 elements. The nodal coordinates may be incorrect or the element aspect ratio may exceed 1000 to 1. The elements have been identified in element set ErrElemNormal.
+#: Error in job Pressure_Box_With_Holes: The geometry of 16 elements is too distorted. Check the nodal coordinates or node numbering on elements identified in element set ErrElemDistorted.
+#: Error in job Pressure_Box_With_Holes: The area of 9 elements is zero, small, or negative. Check coordinates or node numbering, or modify the mesh seed. The elements have been identified in element set ErrElemAreaSmallNegZero.
+#: Error in job Pressure_Box_With_Holes: Error in defining normal to the element surface at a node in 17 elements. The elements have been identified in element set ErrElemShellNormal.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       31
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.58171, 
+    farPlane=2.68415, width=0.954112, height=0.616683, cameraPosition=(2.1885, 
+    -0.992256, -0.255842), cameraUpVector=(0.0578949, 0.812862, -0.579572), 
+    cameraTarget=(0.404633, 0.0877597, -0.121142))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.79186, 
+    farPlane=2.48497, width=1.08088, height=0.698615, cameraPosition=(0.600911, 
+    -1.97782, -0.486517), cameraUpVector=(0.140899, 0.506271, -0.850786), 
+    cameraTarget=(0.372437, 0.0677729, -0.12582))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.56919, 
+    farPlane=2.62488, width=0.94656, height=0.611802, cameraPosition=(1.6843, 
+    1.62482, -0.745643), cameraUpVector=(-0.94775, 0.269288, -0.171036), 
+    cameraTarget=(0.402115, 0.101046, -0.112487))
+mdb.models['Model-1'].constraints['Constraint-8'].suppress()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.59505, 
+    farPlane=2.60299, width=0.962161, height=0.621885, cameraPosition=(1.75511, 
+    1.69338, -0.0642288), cameraUpVector=(-0.866306, 0.309842, -0.391805), 
+    cameraTarget=(0.402363, 0.101286, -0.110097))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Error in job Pressure_Box_With_Holes: Normal cannot be computed in 17 elements. The nodal coordinates may be incorrect or the element aspect ratio may exceed 1000 to 1. The elements have been identified in element set ErrElemNormal.
+#: Error in job Pressure_Box_With_Holes: The geometry of 16 elements is too distorted. Check the nodal coordinates or node numbering on elements identified in element set ErrElemDistorted.
+#: Error in job Pressure_Box_With_Holes: The area of 9 elements is zero, small, or negative. Check coordinates or node numbering, or modify the mesh seed. The elements have been identified in element set ErrElemAreaSmallNegZero.
+#: Error in job Pressure_Box_With_Holes: Error in defining normal to the element surface at a node in 17 elements. The elements have been identified in element set ErrElemShellNormal.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       31
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.56146, 
+    farPlane=2.70136, width=0.941895, height=0.608786, cameraPosition=(2.2036, 
+    -0.759709, -0.763219), cameraUpVector=(-0.134814, 0.88033, -0.454802), 
+    cameraTarget=(0.404633, 0.0877596, -0.121141))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.59691, 
+    farPlane=2.64587, width=0.963283, height=0.62261, cameraPosition=(2.11183, 
+    0.20939, 1.09371), cameraUpVector=(-0.234868, 0.912902, -0.333837), 
+    cameraTarget=(0.40395, 0.0946846, -0.104946))
+mdb.models['Model-1'].constraints['Constraint-6'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Error in job Pressure_Box_With_Holes: Normal cannot be computed in 17 elements. The nodal coordinates may be incorrect or the element aspect ratio may exceed 1000 to 1. The elements have been identified in element set ErrElemNormal.
+#: Error in job Pressure_Box_With_Holes: The geometry of 16 elements is too distorted. Check the nodal coordinates or node numbering on elements identified in element set ErrElemDistorted.
+#: Error in job Pressure_Box_With_Holes: The area of 9 elements is zero, small, or negative. Check coordinates or node numbering, or modify the mesh seed. The elements have been identified in element set ErrElemAreaSmallNegZero.
+#: Error in job Pressure_Box_With_Holes: Error in defining normal to the element surface at a node in 17 elements. The elements have been identified in element set ErrElemShellNormal.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+mdb.models['Model-1'].constraints['Constraint-1'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints['Constraint-5'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Error in job Pressure_Box_With_Holes: Too many attempts made for this increment
+#: Job Pressure_Box_With_Holes: Abaqus/Standard aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+mdb.models['Model-1'].constraints['Constraint-8'].resume()
+mdb.models['Model-1'].constraints['Constraint-3'].resume()
+mdb.models['Model-1'].constraints['Constraint-4'].resume()
+mdb.models['Model-1'].constraints['Constraint-5'].resume()
+mdb.models['Model-1'].constraints['Constraint-6'].resume()
+mdb.models['Model-1'].constraints['Constraint-7'].resume()
+mdb.models['Model-1'].constraints['Constraint-1'].resume()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.70832, 
+    farPlane=2.58202, width=1.03049, height=0.666048, cameraPosition=(1.23507, 
+    -1.84557, -0.212267), cameraUpVector=(-0.135181, 0.261067, 0.955809), 
+    cameraTarget=(0.390848, 0.0639759, -0.124462))
+a = mdb.models['Model-1'].rootAssembly
+a.deleteFeatures(('Edge to Edge-4', 'Edge to Edge-5', 'Edge to Edge-6', 
+    'Edge to Edge-7', ))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.59196, 
+    farPlane=2.70658, width=0.960297, height=0.620681, cameraPosition=(
+    -1.24463, -1.22336, -0.579769), cameraUpVector=(0.72235, -0.499853, 
+    0.477868), cameraTarget=(0.32671, 0.0800695, -0.133968))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.77931, 
+    farPlane=2.52371, width=1.07331, height=0.693726, cameraPosition=(
+    -0.0321158, 2.20995, -0.398681), cameraUpVector=(-0.268188, -0.271538, 
+    0.924306), cameraTarget=(0.360324, 0.175249, -0.128948))
+mdb.models['Model-1'].interactions['Int-6'].suppress()
+mdb.models['Model-1'].constraints['Constraint-6'].suppress()
+mdb.models['Model-1'].constraints['Constraint-5'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.models['Model-1'].constraints['Constraint-3'].suppress()
+mdb.models['Model-1'].constraints['Constraint-4'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints['Constraint-6'].resume()
+mdb.models['Model-1'].constraints['Constraint-5'].resume()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Error in job Pressure_Box_With_Holes: Normal cannot be computed in 17 elements. The nodal coordinates may be incorrect or the element aspect ratio may exceed 1000 to 1. The elements have been identified in element set ErrElemNormal.
+#: Error in job Pressure_Box_With_Holes: The geometry of 16 elements is too distorted. Check the nodal coordinates or node numbering on elements identified in element set ErrElemDistorted.
+#: Error in job Pressure_Box_With_Holes: The area of 9 elements is zero, small, or negative. Check coordinates or node numbering, or modify the mesh seed. The elements have been identified in element set ErrElemAreaSmallNegZero.
+#: Error in job Pressure_Box_With_Holes: Error in defining normal to the element surface at a node in 17 elements. The elements have been identified in element set ErrElemShellNormal.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.61443, 
+    farPlane=2.68899, width=0.973853, height=0.629443, cameraPosition=(
+    -1.75044, 0.0408887, -0.465976), cameraUpVector=(0.20071, -0.342813, 
+    0.917712), cameraTarget=(0.310946, 0.112918, -0.130882))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.81452, 
+    farPlane=2.48742, width=1.09455, height=0.707455, cameraPosition=(0.24097, 
+    -1.97284, 0.382397), cameraUpVector=(0.181807, 0.531539, 0.827292), 
+    cameraTarget=(0.368352, 0.0548682, -0.106426))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.79685, 
+    farPlane=2.50009, width=1.08389, height=0.700567, cameraPosition=(0.411594, 
+    -1.47342, 1.3298), cameraUpVector=(0.135415, 0.876679, 0.461623), 
+    cameraTarget=(0.373213, 0.0690971, -0.0794335))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.58084, 
+    farPlane=2.71278, width=0.953593, height=0.616348, cameraPosition=(
+    -1.62156, 0.891969, -0.302239), cameraUpVector=(0.254828, -0.0399594, 
+    0.966161), cameraTarget=(0.31758, 0.133821, -0.124091))
+mdb.models['Model-1'].interactions.changeKey(fromName='Int-10', 
+    toName='Sides to Cap')
+mdb.models['Model-1'].interactions.changeKey(fromName='Int-7', 
+    toName='Sides to sides')
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.58944, 
+    farPlane=2.69867, width=0.95878, height=0.6197, cameraPosition=(2.0355, 
+    1.39518, 0.320276), cameraUpVector=(-0.49327, -0.207209, 0.844837), 
+    cameraTarget=(0.414895, 0.147211, -0.107526))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.72725, 
+    farPlane=2.5666, width=1.04191, height=0.673429, cameraPosition=(1.05829, 
+    0.833403, -2.01879), cameraUpVector=(0.410817, 0.545374, 0.730614), 
+    cameraTarget=(0.390115, 0.132966, -0.16684))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.81747, 
+    farPlane=2.47857, width=1.09633, height=0.708607, cameraPosition=(0.525287, 
+    -0.578977, -2.14239), cameraUpVector=(0.588159, 0.799102, 0.124525), 
+    cameraTarget=(0.375906, 0.0953148, -0.170135))
+mdb.models['Model-1'].constraints.changeKey(fromName='Constraint-1', 
+    toName='Bottom to Sides')
+mdb.models['Model-1'].constraints.changeKey(fromName='Constraint-5', 
+    toName='Sides to sides')
+mdb.models['Model-1'].constraints.changeKey(fromName='Constraint-6', 
+    toName='Cap to sides')
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.82674, 
+    farPlane=2.47194, width=1.10193, height=0.712222, cameraPosition=(0.358848, 
+    -1.96477, -0.655516), cameraUpVector=(0.499839, 0.5211, -0.691821), 
+    cameraTarget=(0.371629, 0.0576598, -0.129783))
+mdb.models['Model-1'].constraints['Constraint-8'].suppress()
+mdb.models['Model-1'].constraints['Constraint-7'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Error in job Pressure_Box_With_Holes: Normal cannot be computed in 17 elements. The nodal coordinates may be incorrect or the element aspect ratio may exceed 1000 to 1. The elements have been identified in element set ErrElemNormal.
+#: Error in job Pressure_Box_With_Holes: The geometry of 16 elements is too distorted. Check the nodal coordinates or node numbering on elements identified in element set ErrElemDistorted.
+#: Error in job Pressure_Box_With_Holes: The area of 9 elements is zero, small, or negative. Check coordinates or node numbering, or modify the mesh seed. The elements have been identified in element set ErrElemAreaSmallNegZero.
+#: Error in job Pressure_Box_With_Holes: Error in defining normal to the element surface at a node in 17 elements. The elements have been identified in element set ErrElemShellNormal.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       31
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.51965, 
+    farPlane=2.59652, width=0.916674, height=0.592485, cameraPosition=(
+    -1.63748, -0.071438, 0.292595), cameraUpVector=(0.268865, 0.963076, 
+    0.0140496), cameraTarget=(0.404633, 0.0877596, -0.121142))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.75554, 
+    farPlane=2.4202, width=1.05897, height=0.684455, cameraPosition=(0.513257, 
+    -1.91707, 0.339603), cameraUpVector=(-0.667212, 0.433587, 0.605666), 
+    cameraTarget=(0.371618, 0.116091, -0.121864))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.51074, 
+    farPlane=2.66104, width=0.911303, height=0.589014, cameraPosition=(2.08881, 
+    1.12101, 0.508997), cameraUpVector=(-0.583834, -0.189867, 0.789359), 
+    cameraTarget=(0.370255, 0.113463, -0.12201))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.52289, 
+    farPlane=2.64889, width=0.918631, height=0.59375, cameraPosition=(2.08881, 
+    1.12101, 0.508997), cameraUpVector=(-0.603862, 0.637946, -0.477887), 
+    cameraTarget=(0.370255, 0.113463, -0.12201))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.63289, 
+    farPlane=2.5316, width=0.984983, height=0.636636, cameraPosition=(1.28344, 
+    0.706039, 1.66063), cameraUpVector=(-0.172668, 0.804182, -0.568751), 
+    cameraTarget=(0.371718, 0.114217, -0.124102))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.53012, 
+    farPlane=2.62585, width=0.922993, height=0.596569, cameraPosition=(
+    -1.20114, -0.482611, 1.1041), cameraUpVector=(0.411097, 0.832901, 
+    0.370507), cameraTarget=(0.380589, 0.118461, -0.122115))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.71488, 
+    farPlane=2.58252, width=1.03446, height=0.668613, cameraPosition=(
+    -0.138082, -1.29014, -1.65878), cameraUpVector=(0.846711, 0.472065, 
+    -0.245427), cameraTarget=(0.357836, 0.0763856, -0.157631))
+p1 = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.seedPart(size=0.05, minSizeFactor=0.9)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+p1 = mdb.models['Model-1'].parts['Cap']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Cap']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Cap']
+p.seedPart(size=0.05, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Cap']
+p.generateMesh()
+p1 = mdb.models['Model-1'].parts['Long_Side']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Long_Side']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Long_Side']
+p.seedPart(size=0.05, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Long_Side']
+p.generateMesh()
+p1 = mdb.models['Model-1'].parts['Short Side With Holes']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Short Side With Holes']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Short Side With Holes']
+p.seedPart(size=0.05, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Short Side With Holes']
+p.generateMesh()
+p1 = mdb.models['Model-1'].parts['Top_Flange']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON, 
+    interactions=OFF, constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.51754, 
+    farPlane=2.66535, width=0.915402, height=0.591663, cameraPosition=(2.2223, 
+    0.345065, -1.10479), cameraUpVector=(-0.575371, 0.804292, -0.148536), 
+    cameraTarget=(0.401708, 0.0923019, -0.110661))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.52675, 
+    farPlane=2.67183, width=0.920956, height=0.595253, cameraPosition=(2.12376, 
+    0.4516, 1.01895), cameraUpVector=(-0.00586401, 0.600202, -0.799827), 
+    cameraTarget=(0.401625, 0.0923919, -0.108866))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.52641, 
+    farPlane=2.67218, width=0.920749, height=0.595119, cameraPosition=(2.12376, 
+    0.4516, 1.01895), cameraUpVector=(0.0635169, 0.488565, -0.870213), 
+    cameraTarget=(0.401625, 0.0923919, -0.108866))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints['Constraint-8'].resume()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55567, 
+    farPlane=2.70078, width=0.938406, height=0.606531, cameraPosition=(1.99753, 
+    -1.24381, 0.0918873), cameraUpVector=(0.0175346, 0.66142, 0.749811), 
+    cameraTarget=(0.404074, 0.0914297, -0.119705))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.63837, 
+    farPlane=2.61758, width=0.988289, height=0.638773, cameraPosition=(1.31226, 
+    -1.79129, -0.0127314), cameraUpVector=(-0.220479, 0.208161, -0.952921), 
+    cameraTarget=(0.39166, 0.0815119, -0.1216))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.7364, 
+    farPlane=2.53272, width=1.04742, height=0.676994, cameraPosition=(0.447612, 
+    -1.63798, -1.32655), cameraUpVector=(-0.136306, 0.79978, -0.584613), 
+    cameraTarget=(0.376099, 0.0842711, -0.145245))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.54614, 
+    farPlane=2.73558, width=0.932658, height=0.602816, cameraPosition=(2.29135, 
+    0.699269, -0.860258), cameraUpVector=(-0.625668, -0.139326, -0.767546), 
+    cameraTarget=(0.414868, 0.133417, -0.13544))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55581, 
+    farPlane=2.72592, width=0.938488, height=0.606585, cameraPosition=(2.29135, 
+    0.699269, -0.860258), cameraUpVector=(-0.532682, -0.411683, -0.739437), 
+    cameraTarget=(0.414868, 0.133417, -0.13544))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.64246, 
+    farPlane=2.65498, width=0.990756, height=0.640367, cameraPosition=(
+    -0.809964, 0.557337, -1.85029), cameraUpVector=(0.81845, -0.505703, 
+    -0.272771), cameraTarget=(0.340714, 0.130023, -0.159112))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.5521, 
+    farPlane=2.74175, width=0.936248, height=0.605137, cameraPosition=(
+    -1.21744, -0.911267, -1.12498), cameraUpVector=(0.874142, -0.426775, 
+    -0.231817), cameraTarget=(0.329517, 0.0896668, -0.139181))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.65815, 
+    farPlane=2.63852, width=1.00022, height=0.646483, cameraPosition=(
+    -0.531094, 0.85465, -1.91492), cameraUpVector=(0.592174, -0.776005, 
+    -0.217132), cameraTarget=(0.347819, 0.136757, -0.160246))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+del mdb.models['Model-1'].rootAssembly.surfaces['Surf-12']
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+del mdb.models['Model-1'].rootAssembly.surfaces['Surf-4']
+del mdb.models['Model-1'].rootAssembly.surfaces['Surf-11']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+del mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-1']
+del mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-2']
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('m_Surf-5', 
+    'm_Surf-6', 'm_Surf-7', 'm_Surf-8', 'm_Surf-9', ))
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF, 
+    datacheckJob=True)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+del mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-16']
+del mdb.models['Model-1'].rootAssembly.surfaces['m_Surf-24']
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('m_Surf-26', 
+    'm_Surf-27', 'm_Surf-28', 'm_Surf-29', ))
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('m_Surf-33', 
+    'm_Surf-35', ))
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('m_Surf-41', 
+    'm_Surf-43', ))
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('m_Surf-49', 
+    'm_Surf-50', ))
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.45421, 
+    farPlane=2.64112, width=0.877204, height=0.566974, cameraPosition=(
+    -1.37138, 1.0603, -0.62066), cameraUpVector=(0.492895, -0.244957, 
+    -0.834896), cameraTarget=(0.408945, 0.0880978, -0.118675))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('s_Surf-2', 
+    's_Surf-9', 's_Surf-19', ))
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('s_Surf-20', 
+    's_Surf-21', ))
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('s_Surf-22', 
+    's_Surf-24', 's_Surf-30', ))
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('s_Surf-33', 
+    's_Surf-35', ))
+mdb.models['Model-1'].rootAssembly.deleteSurfaces(surfaceNames=('s_Surf-41', 
+    's_Surf-43', ))
+del mdb.models['Model-1'].rootAssembly.surfaces['s_Surf-50']
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.56299, 
+    farPlane=2.61636, width=0.94282, height=0.609384, cameraUpVector=(
+    -0.0935572, 0.419246, -0.903039), cameraTarget=(0.404633, 0.0877595, 
+    -0.121142))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.60625, 
+    farPlane=2.65978, width=0.968913, height=0.626249, cameraPosition=(1.78151, 
+    -1.43746, -0.501493), cameraUpVector=(0.308853, 0.844578, -0.437376), 
+    cameraTarget=(0.404633, 0.0877595, -0.121142))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.64165, 
+    farPlane=2.6568, width=0.990285, height=0.640063, cameraPosition=(1.39565, 
+    -1.38067, -1.26926), cameraUpVector=(-0.2516, 0.764544, -0.593439), 
+    cameraTarget=(0.399964, 0.073899, -0.146932))
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.56207, 
+    farPlane=2.70937, width=0.942261, height=0.609023, cameraPosition=(2.40472, 
+    -0.399692, -0.519145), cameraUpVector=(-0.152434, 0.959485, -0.236965), 
+    cameraTarget=(0.417227, 0.108732, -0.121499))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.58835, 
+    farPlane=2.71039, width=0.958135, height=0.619283, cameraPosition=(1.95236, 
+    -1.07406, -0.954994), cameraUpVector=(-0.352258, 0.625715, -0.695985), 
+    cameraTarget=(0.415386, 0.082393, -0.138226))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.65599, 
+    farPlane=2.64199, width=0.998936, height=0.645655, cameraPosition=(1.83158, 
+    0.252673, -1.68623), cameraUpVector=(-0.096731, -0.954313, 0.282718), 
+    cameraTarget=(0.412032, 0.119236, -0.158532))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.70073, 
+    farPlane=2.59694, width=1.02593, height=0.663099, cameraPosition=(1.07229, 
+    1.99942, -0.875473), cameraUpVector=(-0.13196, -0.637488, -0.759075), 
+    cameraTarget=(0.391079, 0.167438, -0.136159))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.6968, 
+    farPlane=2.60052, width=1.02356, height=0.66157, cameraPosition=(-0.441334, 
+    2.06646, 0.272595), cameraUpVector=(-0.103286, -0.21725, -0.970636), 
+    cameraTarget=(0.349413, 0.169283, -0.104556))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.6116, 
+    farPlane=2.68678, width=0.972163, height=0.62835, cameraPosition=(2.49483, 
+    -0.0427526, 0.174803), cameraUpVector=(-0.216801, -0.150179, -0.964595), 
+    cameraTarget=(0.430003, 0.11139, -0.10724))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.60107, 
+    farPlane=2.69717, width=0.965809, height=0.624243, cameraPosition=(2.0085, 
+    -1.23938, 0.203874), cameraUpVector=(-0.208907, 0.0461951, -0.976844), 
+    cameraTarget=(0.41654, 0.0782629, -0.106435))
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['Short Side-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#1 ]', ), )
+f2 = a.instances['Long_Side-1'].faces
+faces2 = f2.getSequenceFromMask(mask=('[#1 ]', ), )
+f3 = a.instances['Short Side With Holes-1'].faces
+faces3 = f3.getSequenceFromMask(mask=('[#1 ]', ), )
+f4 = a.instances['Long_Side-2'].faces
+faces4 = f4.getSequenceFromMask(mask=('[#1 ]', ), )
+a.Set(faces=faces1+faces2+faces3+faces4, name='s_Set-14')
+#: The set 's_Set-14' has been edited (4 faces).
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.72816, 
+    farPlane=2.57071, width=1.04247, height=0.673792, cameraPosition=(1.17245, 
+    -0.338733, 1.82646), cameraUpVector=(0.677116, -0.224364, -0.700839), 
+    cameraTarget=(0.393422, 0.103167, -0.0615685))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.71664, 
+    farPlane=2.5818, width=1.03552, height=0.6693, cameraPosition=(0.921464, 
+    -1.74369, -1.04263), cameraUpVector=(0.526963, 0.745094, -0.408833), 
+    cameraTarget=(0.386446, 0.0641187, -0.14131))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.71687, 
+    farPlane=2.58156, width=1.03566, height=0.669391, cameraPosition=(0.921464, 
+    -1.74369, -1.04263), cameraUpVector=(0.408137, 0.759009, -0.507277), 
+    cameraTarget=(0.386446, 0.0641187, -0.14131))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.65606, 
+    farPlane=2.64244, width=0.998976, height=0.64568, cameraPosition=(
+    -0.701017, -1.69764, -0.541736), cameraUpVector=(0.417954, 0.345398, 
+    -0.840247), cameraTarget=(0.341507, 0.0653941, -0.127436))
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['Long_Side-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#1 ]', ), )
+f2 = a.instances['Short Side-1'].faces
+faces2 = f2.getSequenceFromMask(mask=('[#1 ]', ), )
+f3 = a.instances['Long_Side-2'].faces
+faces3 = f3.getSequenceFromMask(mask=('[#1 ]', ), )
+f4 = a.instances['Cap-1'].faces
+faces4 = f4.getSequenceFromMask(mask=('[#1ff ]', ), )
+f5 = a.instances['Short Side With Holes-1'].faces
+faces5 = f5.getSequenceFromMask(mask=('[#1 ]', ), )
+leaf = dgm.LeafFromGeometry(faceSeq=faces1+faces2+faces3+faces4+faces5)
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.remove(leaf=leaf)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.80996, 
+    farPlane=2.66748, width=1.09181, height=0.705682, cameraPosition=(
+    -0.865569, -0.980519, -1.49613), cameraUpVector=(0.67023, 0.5357, 
+    -0.513631), cameraTarget=(0.334993, 0.0937841, -0.165219))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.77864, 
+    farPlane=2.6988, width=1.46791, height=0.948773, viewOffsetX=0.144518, 
+    viewOffsetY=-0.0458028)
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Bottom-1'].faces
+side2Faces1 = s1.getSequenceFromMask(mask=('[#1ff ]', ), )
+a.Surface(side2Faces=side2Faces1, name='Bottom_master_surface')
+#: The surface 'Bottom_master_surface' has been edited (9 faces).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+leaf = dgm.Leaf(leafType=DEFAULT_MODEL)
+session.viewports['Viewport: 1'].assemblyDisplay.displayGroup.replace(
+    leaf=leaf)
+session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.33482, 
+    farPlane=2.59053, cameraPosition=(1.81362, -0.98532, -0.865031), 
+    cameraUpVector=(-0.458407, 0.469294, -0.754736), cameraTarget=(0.162543, 
+    0.292241, -0.0565592))
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.53941, 
+    farPlane=2.71778, width=0.928595, height=0.60019, cameraPosition=(2.28341, 
+    -0.693645, -0.585829), cameraUpVector=(-0.286319, 0.631216, -0.720824), 
+    cameraTarget=(0.40366, 0.0906341, -0.118725))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55698, 
+    farPlane=2.70411, width=0.939195, height=0.607041, cameraPosition=(1.72982, 
+    -0.995491, -1.32103), cameraUpVector=(-0.297069, 0.818411, -0.491888), 
+    cameraTarget=(0.393538, 0.0851151, -0.132168))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.75586, 
+    farPlane=2.52025, width=1.05916, height=0.684582, cameraPosition=(0.31565, 
+    -1.84602, -0.960499), cameraUpVector=(0.332602, 0.652122, -0.681258), 
+    cameraTarget=(0.366411, 0.0687998, -0.125252))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.62698, 
+    farPlane=2.66069, width=0.981419, height=0.634333, cameraPosition=(
+    -0.439848, -1.72329, 0.633603), cameraUpVector=(-0.012742, -0.0089595, 
+    -0.999879), cameraTarget=(0.349316, 0.0715769, -0.0891816))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.31747, 
+    farPlane=2.57123, cameraPosition=(1.88475, 0.838997, 0.868376), 
+    cameraUpVector=(-0.16075, 0.579775, -0.798762), cameraTarget=(0.152539, 
+    0.0356566, -0.300357))
+del mdb.models['Model-1'].rootAssembly.sets['m_Set-17']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.33636, 
+    farPlane=2.60236, cameraPosition=(2.0739, 1.03697, -0.478322), 
+    cameraUpVector=(-0.486931, -0.123067, -0.864727), cameraTarget=(0.123903, 
+    0.00568447, -0.0964741))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.3483, 
+    farPlane=2.55758, cameraPosition=(1.80227, -1.1975, -0.322209), 
+    cameraUpVector=(-0.108151, 0.493823, -0.862811), cameraTarget=(0.161055, 
+    0.311305, -0.117827))
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['Long_Side-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#1 ]', ), )
+f2 = a.instances['Long_Side-2'].faces
+faces2 = f2.getSequenceFromMask(mask=('[#1 ]', ), )
+a.Set(faces=faces1+faces2, name='s_Set-2')
+#: The set 's_Set-2' has been edited (2 faces).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.32471, 
+    farPlane=2.59869, cameraPosition=(1.99668, 1.05443, -0.686245), 
+    cameraUpVector=(-0.372405, -0.501222, -0.781083), cameraTarget=(0.132607, 
+    -0.018221, -0.0645575))
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['Long_Side-2'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#1 ]', ), )
+f2 = a.instances['Long_Side-1'].faces
+faces2 = f2.getSequenceFromMask(mask=('[#1 ]', ), )
+a.Set(faces=faces1+faces2, name='s_Set-22')
+#: The set 's_Set-22' has been edited (2 faces).
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.38651, 
+    farPlane=2.55159, cameraPosition=(-0.854183, 1.63263, -0.389213), 
+    cameraUpVector=(0.671944, -0.0127, -0.740493), cameraTarget=(0.535189, 
+    -0.0998711, -0.106503))
+a = mdb.models['Model-1'].rootAssembly
+f1 = a.instances['Short Side With Holes-1'].faces
+faces1 = f1.getSequenceFromMask(mask=('[#1 ]', ), )
+f2 = a.instances['Short Side-1'].faces
+faces2 = f2.getSequenceFromMask(mask=('[#1 ]', ), )
+a.Set(faces=faces1+faces2, name='m_Set-22')
+#: The set 'm_Set-22' has been edited (2 faces).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+#: Job Pressure_Box_With_Holes completed successfully. 
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.57836, 
+    farPlane=2.67122, width=0.952088, height=0.615375, cameraPosition=(1.4296, 
+    -1.27802, -1.31817), cameraUpVector=(0.124424, 0.922353, -0.365764), 
+    cameraTarget=(0.404895, 0.0914791, -0.117666))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.35779, 
+    farPlane=2.5761, cameraPosition=(-1.55588, 0.281505, 0.242415), 
+    cameraUpVector=(0.157376, 0.124853, -0.979614), cameraTarget=(0.631287, 
+    0.0851664, -0.193005))
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55499, 
+    farPlane=2.70007, width=0.937989, height=0.606262, cameraPosition=(1.6653, 
+    -1.21489, -1.15351), cameraUpVector=(-0.306891, 0.726363, -0.614992), 
+    cameraTarget=(0.40879, 0.0925222, -0.114945))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.58258, 
+    farPlane=2.70111, width=0.954634, height=0.61702, cameraPosition=(2.4423, 
+    0.641184, 0.0540205), cameraUpVector=(-0.211897, -0.250719, -0.944584), 
+    cameraTarget=(0.422612, 0.125541, -0.0934634))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.53815, 
+    farPlane=2.73102, width=0.927836, height=0.5997, cameraPosition=(2.06041, 
+    1.12054, -0.94663), cameraUpVector=(-0.241275, -0.785065, -0.57049), 
+    cameraTarget=(0.413311, 0.137216, -0.117834))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.73523, 
+    farPlane=2.51076, width=1.04672, height=0.676539, cameraPosition=(
+    0.0143265, 0.703724, -2.11966), cameraUpVector=(0.941191, 0.228124, 
+    0.249238), cameraTarget=(0.370269, 0.128448, -0.142511))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.59341, 
+    farPlane=2.65624, width=0.961174, height=0.621248, cameraPosition=(
+    -0.603842, 1.92936, 0.409334), cameraUpVector=(0.391991, 0.084559, 
+    -0.916075), cameraTarget=(0.360568, 0.147683, -0.102822))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p1 = mdb.models['Model-1'].parts['Short Side']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Short Side']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Short Side']
+p.seedPart(size=0.025, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Short Side']
+p.generateMesh()
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Error in job Pressure_Box_With_Holes: Normal cannot be computed in 5 elements. The nodal coordinates may be incorrect or the element aspect ratio may exceed 1000 to 1. The elements have been identified in element set ErrElemNormal.
+#: Error in job Pressure_Box_With_Holes: The geometry of 5 elements is too distorted. Check the nodal coordinates or node numbering on elements identified in element set ErrElemDistorted.
+#: Error in job Pressure_Box_With_Holes: The area of 2 elements is zero, small, or negative. Check coordinates or node numbering, or modify the mesh seed. The elements have been identified in element set ErrElemAreaSmallNegZero.
+#: Error in job Pressure_Box_With_Holes: Error in defining normal to the element surface at a node in 5 elements. The elements have been identified in element set ErrElemShellNormal.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=ON, 
+    engineeringFeatures=ON, mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+p1 = mdb.models['Model-1'].parts['Short Side']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(sectionAssignments=OFF, 
+    engineeringFeatures=OFF, mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p = mdb.models['Model-1'].parts['Short Side']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Short Side']
+p.seedPart(size=0.05, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Short Side']
+p.generateMesh()
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.56655, 
+    farPlane=2.59125, width=0.944969, height=0.610773, cameraPosition=(1.21403, 
+    1.34497, 1.33857), cameraUpVector=(0.114766, 0.418412, -0.900977), 
+    cameraTarget=(0.405124, 0.0876969, -0.121455))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.548, 
+    farPlane=2.61837, width=0.933777, height=0.603539, cameraPosition=(1.58734, 
+    1.79032, -0.352973), cameraUpVector=(-0.184993, -0.406186, -0.894869), 
+    cameraTarget=(0.40319, 0.0853892, -0.11269))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55003, 
+    farPlane=2.6678, width=0.934999, height=0.604329, cameraPosition=(2.38689, 
+    0.736715, -0.0707998), cameraUpVector=(-0.299603, -0.0939456, -0.949427), 
+    cameraTarget=(0.400698, 0.0886733, -0.11357))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints['Bottom to Sides'].setValues(
+    tieRotations=OFF)
+mdb.models['Model-1'].constraints['Cap to sides'].setValues(tieRotations=OFF)
+mdb.models['Model-1'].constraints['Constraint-8'].setValues(tieRotations=OFF)
+mdb.models['Model-1'].constraints['Sides to sides'].setValues(tieRotations=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.59079, 
+    farPlane=2.6468, width=0.959587, height=0.620222, cameraPosition=(2.47223, 
+    0.157549, 0.165054), cameraUpVector=(-0.285851, 0.780914, -0.555394), 
+    cameraTarget=(0.403139, 0.0897308, -0.119546))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints['Bottom to Sides'].setValues(tieRotations=ON)
+mdb.models['Model-1'].constraints['Cap to sides'].setValues(tieRotations=ON)
+mdb.models['Model-1'].constraints['Constraint-8'].setValues(tieRotations=ON)
+mdb.models['Model-1'].constraints['Sides to sides'].setValues(tieRotations=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.53785, 
+    farPlane=2.68807, width=0.927651, height=0.59958, cameraPosition=(2.37778, 
+    0.711385, -0.405129), cameraUpVector=(-0.594884, 0.46676, -0.654406), 
+    cameraTarget=(0.403685, 0.0884804, -0.119298))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55317, 
+    farPlane=2.73076, width=0.936894, height=0.605554, cameraPosition=(1.92184, 
+    -1.1717, -0.838559), cameraUpVector=(-0.254014, 0.65831, -0.708593), 
+    cameraTarget=(0.398661, 0.0677288, -0.124074))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.5854, 
+    farPlane=2.73443, width=0.956334, height=0.618119, cameraPosition=(
+    -1.44716, -1.04211, -0.242717), cameraUpVector=(0.304078, 0.253893, 
+    -0.918191), cameraTarget=(0.316421, 0.0708921, -0.109529))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.56651, 
+    farPlane=2.7385, width=0.94494, height=0.610755, cameraPosition=(-1.59229, 
+    0.918459, -0.473659), cameraUpVector=(0.545498, 0.0559379, -0.836244), 
+    cameraTarget=(0.311702, 0.134645, -0.117039))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.5674, 
+    farPlane=2.7376, width=0.94548, height=0.611104, cameraPosition=(-1.59229, 
+    0.91846, -0.473656), cameraUpVector=(0.0651638, -0.296942, 0.95267), 
+    cameraTarget=(0.311702, 0.134645, -0.117039))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.61647, 
+    farPlane=2.68105, width=0.975078, height=0.630234, cameraPosition=(1.43673, 
+    1.90586, 0.415107), cameraUpVector=(-0.681018, -0.199317, 0.704618), 
+    cameraTarget=(0.40012, 0.163468, -0.0910957))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.56713, 
+    farPlane=2.72888, width=0.945318, height=0.610999, cameraPosition=(2.3126, 
+    1.01293, 0.0918822), cameraUpVector=(-0.454004, -0.0116259, 0.890924), 
+    cameraTarget=(0.424205, 0.138914, -0.0999838))
+session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.56038, 
+    farPlane=2.73565, width=0.984155, height=0.636101, cameraPosition=(2.32661, 
+    0.985005, 0.0812395), cameraTarget=(0.438211, 0.110989, -0.110627))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.59639, 
+    farPlane=2.63385, cameraPosition=(-0.680539, 1.93712, 0.107572), 
+    cameraUpVector=(0.124255, -0.421925, 0.898076), cameraTarget=(0.361647, 
+    0.138519, -0.106009))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints['Sides to sides'].setValues(tieRotations=OFF)
+mdb.models['Model-1'].constraints['Constraint-8'].setValues(tieRotations=OFF)
+mdb.models['Model-1'].constraints['Cap to sides'].setValues(tieRotations=OFF)
+mdb.models['Model-1'].constraints['Bottom to Sides'].setValues(
+    tieRotations=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb'])
+#: Warning: The output database 'C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb' disk file has changed.
+#: 
+#: The current plot operation has been canceled, re-open the file to view the results
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Downloads/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.32777, 
+    farPlane=2.52046, cameraPosition=(1.62418, 1.4971, -0.577587), 
+    cameraUpVector=(-0.919279, 0.275199, -0.281412), cameraTarget=(0.370981, 
+    0.115114, -0.112663))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.30618, 
+    farPlane=2.54322, cameraPosition=(1.77667, 1.18192, -0.876), 
+    cameraUpVector=(-0.883315, 0.314008, -0.348073), cameraTarget=(0.371098, 
+    0.114872, -0.112892))
+session.graphicsOptions.setValues(dragMode=FAST, translucencyMode=1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.46862, 
+    farPlane=2.38127, cameraPosition=(0.702154, 1.93957, -0.622173), 
+    cameraUpVector=(-0.0871442, -0.564777, -0.82063), cameraTarget=(0.36995, 
+    0.115681, -0.112621))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.41284, 
+    farPlane=2.44457, cameraPosition=(-0.403555, 0.799511, -1.73593), 
+    cameraUpVector=(0.692843, -0.685338, -0.224235), cameraTarget=(0.368626, 
+    0.114316, -0.113954))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55576, 
+    farPlane=2.30223, cameraPosition=(0.546774, 0.484654, -1.99306), 
+    cameraUpVector=(-0.115757, -0.983938, 0.135893), cameraTarget=(0.371609, 
+    0.113328, -0.114761))
+session.viewports['Viewport: 1'].view.setValues(cameraPosition=(0.546774, 
+    0.484654, -1.99306), cameraUpVector=(-0.239769, -0.962274, 0.128611), 
+    cameraTarget=(0.371609, 0.113328, -0.114761))

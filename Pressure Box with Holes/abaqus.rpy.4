@@ -1,0 +1,1019 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2019 replay file
+# Internal Version: 2018_09_24-14.41.51 157541
+# Run by chs17004 on Wed Oct  7 17:02:55 2020
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=334.271881103516, 
+    height=249.75)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('Pressure_Box With Holes.cae')
+#: The model database "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure_Box With Holes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.54149, 
+    farPlane=2.63786, width=1.38704, height=0.822261, viewOffsetX=0.0986123, 
+    viewOffsetY=0.00881311)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.67478, 
+    farPlane=2.82382, width=1.50697, height=0.893358, cameraPosition=(2.15593, 
+    -0.502216, -1.34483), cameraUpVector=(-0.180743, 0.971145, -0.155595), 
+    cameraTarget=(0.580653, 0.118116, -0.119903), viewOffsetX=0.107139, 
+    viewOffsetY=0.00957515)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.70267, 
+    farPlane=2.77061, width=1.53206, height=0.908235, cameraPosition=(
+    -0.590503, -1.7112, -0.98524), cameraUpVector=(0.368129, 0.560822, 
+    -0.741593), cameraTarget=(0.410305, -0.0625061, -0.180906), 
+    viewOffsetX=0.108923, viewOffsetY=0.0097346)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.63679, 
+    farPlane=2.84461, width=1.47278, height=0.873091, cameraPosition=(-1.44124, 
+    -1.11337, -0.606896), cameraUpVector=(0.38715, 0.365271, -0.846577), 
+    cameraTarget=(0.313137, -0.0636417, -0.174471), viewOffsetX=0.104708, 
+    viewOffsetY=0.00935792)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.67081, 
+    farPlane=2.81058, width=1.03715, height=0.629492, viewOffsetX=0.100738, 
+    viewOffsetY=-0.000740154)
+session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.74153, 
+    farPlane=2.73006, cameraPosition=(-0.632939, -1.82764, -0.578575), 
+    cameraUpVector=(0.242939, 0.456227, -0.856059), cameraTarget=(0.368042, 
+    0.125336, -0.126182))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.76763, 
+    farPlane=2.70686, cameraPosition=(-0.357468, -1.81458, -0.980926), 
+    cameraUpVector=(0.331026, 0.587145, -0.738703), cameraTarget=(0.367438, 
+    0.125307, -0.1253))
+session.viewports['Viewport: 1'].view.setValues(cameraPosition=(-0.357468, 
+    -1.81458, -0.980926), cameraUpVector=(-0.563116, 0.74923, -0.348647), 
+    cameraTarget=(0.367438, 0.125307, -0.1253))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.73372, 
+    farPlane=2.73817, cameraPosition=(-0.699044, -1.79819, -0.553148), 
+    cameraUpVector=(0.212155, 0.461885, -0.861192), cameraTarget=(0.367965, 
+    0.125282, -0.12596))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.73583, 
+    farPlane=2.73769, cameraPosition=(-0.628252, -1.78437, -0.743552), 
+    cameraUpVector=(0.250218, 0.524069, -0.81409), cameraTarget=(0.367814, 
+    0.125253, -0.125555))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.76562, 
+    farPlane=2.7079, width=1.01275, height=0.614686, cameraPosition=(-0.653586, 
+    -1.77675, -0.726267), cameraTarget=(0.34248, 0.132874, -0.10827))
+p1 = mdb.models['Model-1'].parts['Top_Flange-Copy']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.73655, 
+    farPlane=1.91007, width=1.06428, height=0.64596, viewOffsetX=0.0746695, 
+    viewOffsetY=-0.017271)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a = mdb.models['Model-1'].rootAssembly
+a.features['Top_Flange-1'].resume()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.53136, 
+    farPlane=2.90536, width=1.29716, height=0.787303, cameraPosition=(
+    -0.749888, -1.71792, -0.752826), cameraTarget=(0.246178, 0.1917, 
+    -0.134829))
+a = mdb.models['Model-1'].rootAssembly
+a.features['Top_Flange-1'].suppress()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.71504, 
+    farPlane=2.82772, cameraPosition=(-1.16667, -1.40171, -0.83135), 
+    cameraUpVector=(0.315477, 0.532472, -0.78546), cameraTarget=(0.246912, 
+    0.191143, -0.134691))
+a = mdb.models['Model-1'].rootAssembly
+a.deleteFeatures(('Cap-1', 'Edge to Edge-9', 'Edge to Edge-8', ))
+a1 = mdb.models['Model-1'].rootAssembly
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+a1.Instance(name='Top_Flange-Copy-1', part=p, dependent=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.0543, 
+    cameraPosition=(-1.63871, -2.03184, -0.997654), cameraUpVector=(0.915173, 
+    -0.389161, 0.104943), cameraTarget=(0.150999, -0.0151541, -0.115625))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.3919, 
+    farPlane=3.28192, cameraPosition=(-0.637387, -0.00224381, -2.84076), 
+    cameraUpVector=(0.517577, -0.833511, 0.193322), cameraTarget=(0.150999, 
+    -0.0151539, -0.115625))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.15468, 
+    farPlane=3.51915, cameraPosition=(-1.68397, -0.400223, -2.24463), 
+    cameraUpVector=(0.583019, -0.807705, 0.087758), cameraTarget=(0.150999, 
+    -0.0151539, -0.115625))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+a1 = mdb.models['Model-1'].rootAssembly
+e1 = a1.instances['Top_Flange-Copy-1'].edges
+e2 = a1.instances['Long_Side-2'].edges
+a1.EdgeToEdge(movableAxis=e1[6], fixedAxis=e2[2], flip=OFF)
+a1 = mdb.models['Model-1'].rootAssembly
+e1 = a1.instances['Top_Flange-Copy-1'].edges
+e2 = a1.instances['Short Side-1'].edges
+a1.EdgeToEdge(movableAxis=e1[7], fixedAxis=e2[3], flip=OFF)
+#: The instance "Top_Flange-Copy-1" is fully constrained
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.42865, 
+    farPlane=3.5656, width=1.97786, height=1.20046, cameraPosition=(-1.64465, 
+    -0.416827, -2.27552), cameraTarget=(0.190322, -0.0317575, -0.146514))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.32447, 
+    farPlane=3.3423, cameraPosition=(1.07003, 1.8283, -2.26258), 
+    cameraUpVector=(0.360584, -0.915118, -0.180384), cameraTarget=(0.335437, 
+    0.0882584, -0.145822))
+session.graphicsOptions.setValues(translucencyMode=1)
+session.graphicsOptions.setValues(dragMode=FAST)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.24999, 
+    farPlane=3.47729, cameraPosition=(-1.42572, 1.43114, -1.9164), 
+    cameraUpVector=(0.482581, -0.722687, -0.494812), cameraTarget=(0.338544, 
+    0.0887529, -0.146253))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.34442, 
+    farPlane=3.31904, cameraPosition=(0.925984, 2.59357, -1.36932), 
+    cameraUpVector=(-0.0046005, -0.719916, -0.694046), cameraTarget=(0.3605, 
+    0.0996055, -0.141145))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.21771, 
+    farPlane=3.47124, cameraPosition=(-1.49657, 1.77056, -1.48102), 
+    cameraUpVector=(0.301004, -0.726584, -0.617634), cameraTarget=(0.36493, 
+    0.10111, -0.140941))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.25513, 
+    farPlane=3.43382, width=1.45156, height=0.881019, cameraPosition=(-1.46101, 
+    1.76948, -1.53177), cameraTarget=(0.400494, 0.100026, -0.191694))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.46043, 
+    farPlane=3.30589, cameraPosition=(-0.0191584, 1.84516, -2.39032), 
+    cameraUpVector=(0.404358, -0.854436, -0.326243), cameraTarget=(0.404329, 
+    0.100227, -0.193977))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.26436, 
+    farPlane=3.39779, cameraPosition=(-1.87553, -0.26126, 1.5659), 
+    cameraUpVector=(0.00693029, -0.725342, -0.688354), cameraTarget=(0.374549, 
+    0.0664361, -0.130512))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.2653, 
+    farPlane=3.38143, cameraPosition=(-1.43129, 1.0023, -2.10022), 
+    cameraUpVector=(-0.0981172, -0.990361, 0.0977629), cameraTarget=(0.373633, 
+    0.0638314, -0.122954))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.20494, 
+    farPlane=3.39042, cameraPosition=(-1.87158, 1.70771, 0.398077), 
+    cameraUpVector=(-0.238055, -0.671903, -0.701338), cameraTarget=(0.375745, 
+    0.0604481, -0.134937))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.18198, 
+    farPlane=3.33297, cameraPosition=(2.64406, 1.67675, -0.150183), 
+    cameraUpVector=(-0.340019, -0.107845, -0.934214), cameraTarget=(0.312429, 
+    0.060882, -0.127249))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.22499, 
+    farPlane=3.31363, cameraPosition=(2.16685, -1.99002, -0.222045), 
+    cameraUpVector=(-0.415287, 0.124514, -0.901129), cameraTarget=(0.326176, 
+    0.166507, -0.125179))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.225, 
+    farPlane=3.31363, cameraPosition=(2.16685, -1.99002, -0.222045), 
+    cameraUpVector=(-0.64703, -0.147366, 0.748088), cameraTarget=(0.326176, 
+    0.166507, -0.125179))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.32426, 
+    farPlane=3.23668, cameraPosition=(-0.754173, 0.477835, -2.63222), 
+    cameraUpVector=(0.360588, -0.929939, 0.0720338), cameraTarget=(0.397477, 
+    0.106267, -0.0663473))
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Top_Flange-Copy-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#1 ]', ), )
+region1=a.Surface(side1Faces=side1Faces1, name='Flange_Bottom_Edge')
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Short Side-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#1 ]', ), )
+s2 = a.instances['Long_Side-1'].faces
+side1Faces2 = s2.getSequenceFromMask(mask=('[#1 ]', ), )
+s3 = a.instances['Short Side With Holes-1'].faces
+side1Faces3 = s3.getSequenceFromMask(mask=('[#1 ]', ), )
+s4 = a.instances['Long_Side-2'].faces
+side1Faces4 = s4.getSequenceFromMask(mask=('[#1 ]', ), )
+region2=a.Surface(side1Faces=side1Faces1+side1Faces2+side1Faces3+side1Faces4, 
+    name='s_Surf-17')
+mdb.models['Model-1'].Tie(name='Constraint-9', master=region1, slave=region2, 
+    positionToleranceMethod=COMPUTED, adjust=ON, tieRotations=ON, thickness=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.44261, 
+    farPlane=3.1207, cameraPosition=(0.117658, 0.477471, -2.86196), 
+    cameraUpVector=(0.0403304, -0.978084, 0.204267), cameraTarget=(0.379779, 
+    0.106274, -0.0616836))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.26108, 
+    farPlane=3.30321, cameraPosition=(1.55779, 1.88183, -1.90811), 
+    cameraUpVector=(-0.081439, -0.901205, -0.425674), cameraTarget=(0.351171, 
+    0.078377, -0.0806315))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+mdb.models['Model-1'].loads['Cap_Pressure'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, interactions=OFF, constraints=OFF, 
+    engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints['Cap to sides'].suppress()
+mdb.models['Model-1'].constraints.changeKey(fromName='Constraint-9', 
+    toName='Flange to Sides')
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].view.setValues(cameraPosition=(1.55779, 
+    1.88183, -1.90811), cameraUpVector=(-0.192864, -0.864899, -0.463415), 
+    cameraTarget=(0.351171, 0.078377, -0.0806315))
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     6
+#: Number of Meshes:             6
+#: Number of Element Sets:       26
+#: Number of Node Sets:          27
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.30253, 
+    farPlane=2.53903, cameraPosition=(1.5178, -1.059, -1.1065), 
+    cameraUpVector=(-0.282831, 0.761053, -0.583785), cameraTarget=(0.371173, 
+    0.12046, -0.111179))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.5432, 
+    farPlane=2.30605, cameraPosition=(0.642494, -0.220054, -1.98329), 
+    cameraUpVector=(-0.450165, 0.8853, 0.116598), cameraTarget=(0.37202, 
+    0.119648, -0.11033))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.2912, 
+    farPlane=2.56582, cameraPosition=(1.86063, 1.28257, -0.476935), 
+    cameraUpVector=(-0.855184, 0.488144, -0.174285), cameraTarget=(0.373276, 
+    0.121197, -0.108777))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.35723, 
+    farPlane=2.50306, cameraPosition=(1.23681, 1.80449, 0.238999), 
+    cameraUpVector=(-0.036876, -0.159376, -0.986529), cameraTarget=(0.371377, 
+    0.122785, -0.106598))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.29956, 
+    farPlane=2.55632, cameraPosition=(2.11528, 0.896917, -0.35893), 
+    cameraUpVector=(-0.485312, -0.0189565, -0.874136), cameraTarget=(0.374791, 
+    0.119258, -0.108922))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.32805, 
+    farPlane=2.52546, cameraPosition=(2.06239, -0.158454, -0.989605), 
+    cameraUpVector=(-0.743898, -0.166484, -0.647225), cameraTarget=(0.374646, 
+    0.116358, -0.110655))
+p1 = mdb.models['Model-1'].parts['Short Side With Holes']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p1 = mdb.models['Model-1'].parts['Top_Flange']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+a1 = mdb.models['Model-1'].rootAssembly
+p = mdb.models['Model-1'].parts['Cap-Copy']
+a1.Instance(name='Cap-Copy-1', part=p, dependent=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.04774, 
+    farPlane=3.69821, cameraPosition=(-1.95184, 1.8475, 0.483687), 
+    cameraUpVector=(-0.210345, -0.480155, -0.85159), cameraTarget=(0.157879, 
+    -0.00827426, -0.115625))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.17598, 
+    farPlane=3.56997, cameraPosition=(-0.973225, 2.26717, -1.45613), 
+    cameraUpVector=(0.0960684, -0.755145, -0.648481), cameraTarget=(0.157879, 
+    -0.00827423, -0.115625))
+a1 = mdb.models['Model-1'].rootAssembly
+e1 = a1.instances['Cap-Copy-1'].edges
+e2 = a1.instances['Top_Flange-Copy-1'].edges
+a1.EdgeToEdge(movableAxis=e1[32], fixedAxis=e2[40], flip=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.55083, 
+    farPlane=3.29184, cameraPosition=(-0.0535252, 0.465358, -2.97336), 
+    cameraUpVector=(-0.59535, -0.764239, 0.247986), cameraTarget=(0.184007, 
+    -0.0594622, -0.158728))
+a1 = mdb.models['Model-1'].rootAssembly
+e1 = a1.instances['Cap-Copy-1'].edges
+e2 = a1.instances['Top_Flange-Copy-1'].edges
+a1.EdgeToEdge(movableAxis=e1[34], fixedAxis=e2[42], flip=OFF)
+#: The instance "Cap-Copy-1" is fully constrained
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.39094, 
+    farPlane=3.25939, cameraPosition=(-0.285705, 1.82144, -2.28396), 
+    cameraUpVector=(-0.704209, -0.709751, -0.0185073), cameraTarget=(0.181947, 
+    -0.0474276, -0.15261))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.27815, 
+    farPlane=3.19102, cameraPosition=(-0.563765, 2.59662, 0.592667), 
+    cameraUpVector=(-0.630281, -0.328171, -0.703598), cameraTarget=(0.186653, 
+    -0.060547, -0.201295))
+session.viewports['Viewport: 1'].assemblyDisplay.hideInstances(instances=(
+    'Short Side With Holes-1', 'Long_Side-1', 'Short Side-1', 'Long_Side-2', 
+    'Bottom-1', 'Top_Flange-1', ))
+session.viewports['Viewport: 1'].assemblyDisplay.hideInstances(instances=(
+    'Cap-Copy-1', ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.30163, 
+    farPlane=3.24011, cameraPosition=(-0.628228, 2.38665, -1.38789), 
+    cameraUpVector=(-0.65668, -0.724204, -0.210479), cameraTarget=(0.18979, 
+    -0.0503308, -0.104929))
+session.viewports['Viewport: 1'].assemblyDisplay.showInstances(instances=(
+    'Cap-Copy-1', ))
+session.viewports['Viewport: 1'].assemblyDisplay.hideInstances(instances=(
+    'Top_Flange-Copy-1', ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.2756, 
+    farPlane=3.31778, cameraPosition=(-1.1128, 2.32747, 0.747442), 
+    cameraUpVector=(-0.622773, -0.520244, -0.58438), cameraTarget=(0.207648, 
+    -0.0481499, -0.183622))
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Top_Flange-Copy-1'].faces
+side2Faces1 = s1.getSequenceFromMask(mask=('[#1 ]', ), )
+region1=a.Surface(side2Faces=side2Faces1, name='Flange Top Surface')
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Cap-Copy-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#1 ]', ), )
+region2=a.Surface(side1Faces=side1Faces1, name='Cap Bottom Surface')
+mdb.models['Model-1'].Tie(name='Cap to flange', master=region1, slave=region2, 
+    positionToleranceMethod=COMPUTED, adjust=ON, tieRotations=ON, thickness=ON)
+mdb.models['Model-1'].loads['Cap_Pressure'].resume()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, interactions=OFF, constraints=OFF, 
+    engineeringFeatures=OFF)
+a = mdb.models['Model-1'].rootAssembly
+region = a.surfaces['Cap Bottom Surface']
+mdb.models['Model-1'].loads['Cap_Pressure'].setValues(region=region)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.26735, 
+    farPlane=3.32604, width=1.69609, height=1.02943, cameraPosition=(-1.08936, 
+    2.34576, 0.734016), cameraTarget=(0.231088, -0.029859, -0.197048))
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb'])
+#: Warning: The output database 'C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb' disk file has changed.
+#: 
+#: The current plot operation has been canceled, re-open the file to view the results
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     7
+#: Number of Meshes:             7
+#: Number of Element Sets:       27
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.31337, 
+    farPlane=2.51961, cameraPosition=(1.59256, -1.16848, -0.832949), 
+    cameraUpVector=(-0.139752, 0.734888, -0.663633), cameraTarget=(0.370742, 
+    0.126553, -0.107284))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.44235, 
+    farPlane=2.37433, cameraPosition=(-0.0667512, -1.70859, -0.46391), 
+    cameraUpVector=(-0.182582, 0.55054, -0.814598), cameraTarget=(0.376065, 
+    0.128286, -0.108468))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.29335, 
+    farPlane=2.52367, cameraPosition=(-1.23217, -0.853939, -0.468615), 
+    cameraUpVector=(0.136659, 0.691965, -0.708878), cameraTarget=(0.384799, 
+    0.121881, -0.108433))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.27758, 
+    farPlane=2.53944, width=1.62013, height=0.983329, cameraPosition=(-1.21227, 
+    -0.886614, -0.469444), cameraTarget=(0.404703, 0.0892057, -0.109262))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.48722, 
+    farPlane=2.37731, cameraPosition=(0.189802, -0.725444, -1.82923), 
+    cameraUpVector=(0.375606, 0.920603, -0.106824), cameraTarget=(0.394325, 
+    0.0880127, -0.0991977))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.34361, 
+    farPlane=2.52348, cameraPosition=(-0.737081, -1.45603, -0.324212), 
+    cameraUpVector=(0.267755, 0.355365, -0.895557), cameraTarget=(0.389708, 
+    0.0843739, -0.0917015))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.31873, 
+    farPlane=2.49562, cameraPosition=(-0.584997, 0.982658, -1.4992), 
+    cameraUpVector=(-0.204579, -0.978685, -0.0179997), cameraTarget=(0.390566, 
+    0.0981264, -0.0983276))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.37843, 
+    farPlane=2.43593, width=0.872625, height=0.529636, cameraPosition=(
+    -0.744572, 0.960193, -1.40226), cameraTarget=(0.230991, 0.0756609, 
+    -0.00138521))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+p1 = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.seedPart(size=0.025, minSizeFactor=0.9)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.67182, 
+    farPlane=1.82909, width=0.965905, height=0.587328, viewOffsetX=0.0718022, 
+    viewOffsetY=-0.0379193)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#1ff ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#1ff ]', ), )
+p.setMeshControls(regions=pickedRegions, technique=STRUCTURED)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.65154, 
+    farPlane=1.84937, width=1.07989, height=0.656636, viewOffsetX=-0.0249668, 
+    viewOffsetY=-0.0105282)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#1ff ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+p.seedPart(size=0.025, deviationFactor=0.1, minSizeFactor=0.9)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#1ff ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteSeeds()
+mdb.save()
+#: The model database has been saved to "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure_Box With Holes.cae".
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.63638, 
+    farPlane=1.86215, width=1.06997, height=0.650607, cameraPosition=(0.148614, 
+    0.377266, 1.73899), cameraUpVector=(-0.029401, 0.993751, -0.107674), 
+    cameraTarget=(0.149019, 0.188718, -0.00127922), viewOffsetX=-0.0247375, 
+    viewOffsetY=-0.0104315)
+session.graphicsOptions.setValues(dragMode=AS_IS, translucencyMode=2)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.41428, 
+    farPlane=2.11067, width=0.92475, height=0.562304, cameraPosition=(
+    -0.814474, 0.548382, 1.43091), cameraUpVector=(-0.00191935, 0.969449, 
+    -0.245287), cameraTarget=(0.145659, 0.191157, 0.0115342), 
+    viewOffsetX=-0.02138, viewOffsetY=-0.00901569)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.47638, 
+    farPlane=2.04434, width=0.965355, height=0.586994, cameraPosition=(
+    -0.621508, 0.458985, 1.55924), cameraUpVector=(-0.00628194, 0.984621, 
+    -0.17459), cameraTarget=(0.148564, 0.189295, 0.0105745), 
+    viewOffsetX=-0.0223188, viewOffsetY=-0.00941156)
+p = mdb.models['Model-1'].parts['Bottom']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#fff3933 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.204, constraint=FINER)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#f0 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.64747, 
+    farPlane=1.86037, width=1.07722, height=0.655018, cameraPosition=(
+    0.0712051, 0.146504, 1.7517), cameraUpVector=(-0.017675, 0.999608, 
+    0.0217175), cameraTarget=(0.154998, 0.185964, 0.00368769), 
+    viewOffsetX=-0.0249052, viewOffsetY=-0.0105022)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#f0 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#fff3933 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.05, constraint=FINER)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#f0 ]', ), )
+p.generateMesh(regions=pickedRegions)
+session.viewports['Viewport: 1'].view.setProjection(projection=PARALLEL)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.6397, 
+    farPlane=1.86724, cameraPosition=(0.0769988, 0.144955, 1.75162), 
+    cameraUpVector=(-0.000923051, 0.999859, 0.0167817), cameraTarget=(0.128881, 
+    0.174425, -0.00128536))
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#f0 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#fff3933 ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#f0 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#f0 ]', ), )
+p.deleteMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#864ffff ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#10f ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+f = p.faces
+pickedRegions = f.getSequenceFromMask(mask=('[#f0 ]', ), )
+p.generateMesh(regions=pickedRegions)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     7
+#: Number of Meshes:             7
+#: Number of Element Sets:       26
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.4019, 
+    farPlane=2.44338, cameraPosition=(-0.570027, 1.68819, -0.696647), 
+    cameraUpVector=(-0.235788, -0.768462, -0.59487), cameraTarget=(0.37125, 
+    0.115625, -0.115625))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.33431, 
+    farPlane=2.51097, cameraPosition=(2.04726, 1.01316, 0.170668), 
+    cameraUpVector=(-0.191394, -0.0438795, -0.980532), cameraTarget=(0.37125, 
+    0.115625, -0.115625))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.509, 
+    farPlane=2.33628, cameraPosition=(1.04313, 0.223905, 1.68254), 
+    cameraUpVector=(0.646499, 0.438411, -0.624368), cameraTarget=(0.37125, 
+    0.115625, -0.115625))
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=OFF)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=OFF)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p1 = mdb.models['Model-1'].parts['Bottom-Copy']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+session.viewports['Viewport: 1'].view.setValues(width=0.924335, 
+    height=0.561021, cameraPosition=(0.176123, 0.180255, 1.82325), 
+    cameraTarget=(0.176123, 0.180255, 1.20371e-35))
+p1 = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Bottom']
+s = p.features['Shell extrude-1'].sketch
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=s)
+s1 = mdb.models['Model-1'].sketches['__edit__']
+g, v, d, c = s1.geometry, s1.vertices, s1.dimensions, s1.constraints
+s1.setPrimaryObject(option=SUPERIMPOSE)
+p.projectReferencesOntoSketch(sketch=s1, 
+    upToFeature=p.features['Shell extrude-1'], filter=COPLANAR_EDGES)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.91412, 
+    farPlane=1.9551, width=0.223152, height=0.135441, cameraPosition=(
+    -0.150266, 0.305367, 1.93461), cameraTarget=(-0.150266, 0.305367, 0))
+s1.setAsConstruction(objectList=(g[79], g[78], g[79]))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.89295, 
+    farPlane=1.97627, width=0.548587, height=0.332962, cameraPosition=(
+    -0.103694, 0.104726, 1.93461), cameraTarget=(-0.103694, 0.104726, 0))
+s1.setAsConstruction(objectList=(g[81], g[80]))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.89719, 
+    farPlane=1.97203, width=0.407572, height=0.247374, cameraPosition=(
+    0.532189, 0.077611, 1.93461), cameraTarget=(0.532189, 0.077611, 0))
+s1.setAsConstruction(objectList=(g[83], ))
+s1.setAsConstruction(objectList=(g[82], ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.913, 
+    farPlane=1.95622, width=0.235451, height=0.142906, cameraPosition=(
+    0.522226, 0.31768, 1.93461), cameraTarget=(0.522226, 0.31768, 0))
+s1.setAsConstruction(objectList=(g[84], ))
+s1.setAsConstruction(objectList=(g[85], ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.88215, 
+    farPlane=1.98707, width=0.571447, height=0.346837, cameraPosition=(
+    -0.0638036, 0.254187, 1.93461), cameraTarget=(-0.0638036, 0.254187, 0))
+s1.unsetPrimaryObject()
+p = mdb.models['Model-1'].parts['Bottom']
+p.features['Shell extrude-1'].setValues(sketch=s1)
+del mdb.models['Model-1'].sketches['__edit__']
+p = mdb.models['Model-1'].parts['Bottom']
+p.regenerate()
+#: Warning: Mesh deleted in 8 regions due to geometry association failure.
+#* FeatureError: Regeneration failed
+p = mdb.models['Model-1'].parts['Bottom']
+p.backup()
+p = mdb.models['Model-1'].parts['Bottom']
+del p.features['Remove faces-2']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.63609, 
+    farPlane=1.86483, width=1.2273, height=0.744903, cameraPosition=(0.156467, 
+    0.164133, 1.75128), cameraTarget=(0.208246, 0.193545, 0.00183594))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.45816, 
+    farPlane=2.00127, cameraPosition=(-0.44311, 0.0278195, 1.61812), 
+    cameraUpVector=(-0.0206545, 0.995383, 0.0937371), cameraTarget=(0.208246, 
+    0.193545, 0.00183594))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.57348, 
+    farPlane=1.94595, cameraPosition=(0.521884, 0.132969, 1.71958), 
+    cameraUpVector=(0.361832, 0.931536, -0.0363115), cameraTarget=(0.196675, 
+    0.192284, 0.000619337))
+session.viewports['Viewport: 1'].partDisplay.setValues(mesh=ON)
+session.viewports['Viewport: 1'].partDisplay.meshOptions.setValues(
+    meshTechnique=ON)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=OFF)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.57328, 
+    farPlane=1.94614, cameraPosition=(0.521884, 0.132969, 1.71958), 
+    cameraUpVector=(0.00304203, 0.99942, 0.0339102), cameraTarget=(0.196675, 
+    0.192284, 0.000619337))
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.seedPart(size=0.05, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.57235, 
+    farPlane=1.94543, cameraPosition=(0.496329, 0.0743343, 1.72121), 
+    cameraUpVector=(0.00327645, 0.997704, 0.0676447), cameraTarget=(0.196541, 
+    0.191976, 0.000627893))
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.seedPart(size=0.01, deviationFactor=0.1, minSizeFactor=0.1)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteSeeds()
+p = mdb.models['Model-1'].parts['Bottom']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#fff ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.05, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['Bottom']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#f ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.01, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+p.deleteMesh()
+p = mdb.models['Model-1'].parts['Bottom']
+e = p.edges
+pickedEdges = e.getSequenceFromMask(mask=('[#fff ]', ), )
+p.seedEdgeBySize(edges=pickedEdges, size=0.05, deviationFactor=0.1, 
+    minSizeFactor=0.1, constraint=FINER)
+p = mdb.models['Model-1'].parts['Bottom']
+p.generateMesh()
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+#* FeatureError: Regeneration failed
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.35014, 
+    farPlane=3.08162, cameraPosition=(0.270827, 2.80073, -0.568285), 
+    cameraUpVector=(-0.938238, -0.327468, -0.111692), cameraTarget=(0.193984, 
+    -0.0422703, -0.161523))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.showInstances(instances=(
+    'Top_Flange-Copy-1', 'Long_Side-1', 'Short Side-1', 'Long_Side-2', 
+    'Bottom-1', 'Top_Flange-1', 'Short Side With Holes-1', ))
+a = mdb.models['Model-1'].rootAssembly
+del a.features['Top_Flange-1']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.78683, 
+    farPlane=3.31904, cameraPosition=(2.94833, -0.646808, -0.516402), 
+    cameraUpVector=(-0.431288, 0.119413, -0.894277), cameraTarget=(0.169227, 
+    -0.0103937, -0.162003))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.89426, 
+    farPlane=3.17738, cameraPosition=(1.1919, 2.01909, -1.46537), 
+    cameraUpVector=(-0.0488434, -0.770801, -0.635201), cameraTarget=(0.389419, 
+    -0.344598, -0.043037))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.72292, 
+    farPlane=3.31761, cameraPosition=(2.72687, -1.14289, 0.280968), 
+    cameraUpVector=(-0.0911343, 0.146185, -0.98505), cameraTarget=(0.18533, 
+    0.0758183, -0.27523))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.8538, 
+    farPlane=3.31658, cameraPosition=(1.79237, -2.14723, -0.819791), 
+    cameraUpVector=(-0.216081, 0.515329, -0.829304), cameraTarget=(0.316114, 
+    0.216377, -0.121177))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.83438, 
+    farPlane=3.34453, cameraPosition=(1.95889, -1.94113, -1.0625), 
+    cameraUpVector=(-0.409151, 0.481749, -0.774928), cameraTarget=(0.297576, 
+    0.193434, -0.0941582))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+a1 = mdb.models['Model-1'].rootAssembly
+e1 = a1.instances['Short Side With Holes-1'].edges
+e2 = a1.instances['Bottom-1'].edges
+a1.EdgeToEdge(movableAxis=e1[3], fixedAxis=e2[2], flip=OFF)
+#* Constraint creation failed
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.0339, 
+    farPlane=3.26093, cameraPosition=(1.22929, -2.30545, -1.13797), 
+    cameraUpVector=(-0.0864561, 0.659256, -0.746932), cameraTarget=(0.354094, 
+    0.221656, -0.0883122))
+a1 = mdb.models['Model-1'].rootAssembly
+e1 = a1.instances['Bottom-1'].edges
+e2 = a1.instances['Long_Side-2'].edges
+a1.EdgeToEdge(movableAxis=e1[1], fixedAxis=e2[0], flip=OFF)
+#* FeatureError: This constraint will create a dependency cycle.
+#* Please reselect the entities to define the constraint.
+a1 = mdb.models['Model-1'].rootAssembly
+e1 = a1.instances['Long_Side-2'].edges
+e2 = a1.instances['Bottom-1'].edges
+a1.EdgeToEdge(movableAxis=e1[0], fixedAxis=e2[1], flip=OFF)
+#* Constraint creation failed
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.15539, 
+    farPlane=3.36401, cameraPosition=(-1.79144, 1.804, -0.413305), 
+    cameraUpVector=(0.56518, 0.044537, -0.823764), cameraTarget=(0.472619, 
+    0.0604129, -0.116746))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.14407, 
+    farPlane=3.34416, cameraPosition=(-2.27834, -0.595562, -0.050135), 
+    cameraUpVector=(0.240999, 0.283911, -0.92807), cameraTarget=(0.492605, 
+    0.158906, -0.131653))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.17053, 
+    farPlane=3.33504, cameraPosition=(-1.6282, -0.358064, -1.94752), 
+    cameraUpVector=(0.884313, -0.00276649, -0.466886), cameraTarget=(0.462074, 
+    0.147753, -0.0425502))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.19534, 
+    farPlane=3.31024, width=1.32422, height=0.804097, cameraPosition=(-1.68005, 
+    -0.366691, -1.88834), cameraTarget=(0.410224, 0.139126, 0.0166343))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+del mdb.models['Model-1'].rootAssembly.sets['Set-8']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.18724, 
+    farPlane=3.21672, cameraPosition=(1.52424, 1.97785, -1.69865), 
+    cameraUpVector=(0.193959, -0.919449, -0.342043), cameraTarget=(0.270321, 
+    0.0367608, 0.00835253))
+a = mdb.models['Model-1'].rootAssembly
+e1 = a.instances['Bottom-1'].edges
+edges1 = e1.getSequenceFromMask(mask=('[#ff0 ]', ), )
+region = a.Set(edges=edges1, name='Mounting_Edges')
+mdb.models['Model-1'].XsymmBC(name='Base_Mount', createStepName='Step-1', 
+    region=region, localCsys=None)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.15382, 
+    farPlane=3.28289, cameraPosition=(-2.26874, -0.532234, -0.0663934), 
+    cameraUpVector=(0.279818, 0.210577, -0.936675), cameraTarget=(0.510362, 
+    0.195613, -0.0949458))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.13569, 
+    farPlane=3.29497, cameraPosition=(-2.20879, -0.284598, -0.862932), 
+    cameraUpVector=(0.546405, 0.260086, -0.796114), cameraTarget=(0.506952, 
+    0.181527, -0.0496372))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+del mdb.models['Model-1'].boundaryConditions['BC-1']
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.hideInstances(instances=(
+    'Cap-Copy-1', 'Long_Side-1', 'Short Side-1', 'Long_Side-2', 'Bottom-1', 
+    'Short Side With Holes-1', 'Top_Flange-Copy-1', ))
+session.viewports['Viewport: 1'].assemblyDisplay.showInstances(instances=(
+    'Bottom-1', ))
+session.viewports['Viewport: 1'].view.setValues(width=1.40874, height=0.855422, 
+    cameraPosition=(-2.21136, -0.263526, -0.866414), cameraTarget=(0.504378, 
+    0.202599, -0.0531192))
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Bottom-1'].faces
+side2Faces1 = s1.getSequenceFromMask(mask=('[#3 ]', ), )
+a.Surface(side2Faces=side2Faces1, name='Bottom_master_surface')
+#: The surface 'Bottom_master_surface' has been edited (2 faces).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+del mdb.models['Model-1'].rootAssembly.surfaces['Surf-39']
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Bottom-1'].faces
+side2Faces1 = s1.getSequenceFromMask(mask=('[#3 ]', ), )
+region = a.Surface(side2Faces=side2Faces1, name='Bottom_Pressure_Surface')
+mdb.models['Model-1'].loads['Bottom_Pressure'].setValues(region=region)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.showInstances(instances=(
+    'Cap-Copy-1', 'Short Side-1', 'Long_Side-2', 'Bottom-1', 
+    'Short Side With Holes-1', 'Top_Flange-Copy-1', 'Long_Side-1', ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.09747, 
+    farPlane=3.27967, cameraPosition=(-1.64292, -1.1545, -1.36539), 
+    cameraUpVector=(0.381929, 0.690925, -0.613802), cameraTarget=(0.471375, 
+    0.254327, -0.0241495))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.03505, 
+    farPlane=3.2369, cameraPosition=(2.54095, -1.03142, -1.07787), 
+    cameraUpVector=(-0.674406, 0.0979399, -0.731836), cameraTarget=(0.184409, 
+    0.245885, -0.0438702))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.07918, 
+    farPlane=3.20093, cameraPosition=(2.9472, 0.115415, 0.463335), 
+    cameraUpVector=(-0.114313, -0.0751114, -0.990601), cameraTarget=(0.147884, 
+    0.142776, -0.182436))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.09978, 
+    farPlane=3.18032, width=1.09987, height=0.66787, cameraPosition=(2.95313, 
+    0.10344, 0.437105), cameraTarget=(0.153818, 0.130801, -0.208666))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.12639, 
+    farPlane=3.16885, cameraPosition=(3.01702, 0.0197702, -0.0658261), 
+    cameraUpVector=(-0.30489, -0.0879555, -0.948317), cameraTarget=(0.148182, 
+    0.138183, -0.164296))
+session.viewports['Viewport: 1'].assemblyDisplay.hideInstances(instances=(
+    'Short Side With Holes-1', 'Short Side-1', 'Long_Side-2', 'Bottom-1', 
+    'Long_Side-1', ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.07861, 
+    farPlane=3.21365, cameraPosition=(2.58164, 1.18894, 0.848213), 
+    cameraUpVector=(-0.112312, 0.299429, -0.947485), cameraTarget=(0.185126, 
+    0.0389745, -0.241856))
+session.viewports['Viewport: 1'].assemblyDisplay.hideInstances(instances=(
+    'Cap-Copy-1', ))
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Top_Flange-Copy-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#1 ]', ), )
+a.Surface(side1Faces=side1Faces1, name='m_Surf-37')
+#: The surface 'm_Surf-37' has been edited (1 face).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Error in job Pressure_Box_With_Holes: Too many attempts made for this increment
+#: Job Pressure_Box_With_Holes: Abaqus/Standard aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     7
+#: Number of Meshes:             7
+#: Number of Element Sets:       26
+#: Number of Node Sets:          28
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+a = mdb.models['Model-1'].rootAssembly
+a.features['Cap-Copy-1'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+mdb.models['Model-1'].loads['Cap_Pressure'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: SURFACE DEFINITION ASSEMBLY_Cap Bottom Surface NOT FOUND.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: THE SURFACE ASSEMBLY_Cap Bottom Surface HAS NOT BEEN LOCATED
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+#: Error in job Pressure_Box_With_Holes: THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.
+mdb.models['Model-1'].constraints['Cap to flange'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Analysis Input File Processor exited with an error.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints.delete(('Constraint-7', 'Constraint-3', 
+    'Constraint-4', ))
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Error in job Pressure_Box_With_Holes: Too many attempts made for this increment
+#: Job Pressure_Box_With_Holes: Abaqus/Standard aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF, 
+    datacheckJob=True)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+del mdb.models['Model-1'].interactions['Int-6']
+mdb.models['Model-1'].interactions['Flange_To_Sides'].resume()
+#: Error in job Pressure_Box_With_Holes: Too many attempts made for this increment
+#: Job Pressure_Box_With_Holes: Abaqus/Standard aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.showInstances(instances=(
+    'Short Side With Holes-1', 'Long_Side-1', 'Short Side-1', 'Long_Side-2', 
+    'Bottom-1', ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.24067, 
+    farPlane=3.11625, cameraPosition=(1.55459, 0.455832, -2.49435), 
+    cameraUpVector=(-0.966726, -0.214852, -0.138849), cameraTarget=(0.276126, 
+    0.10393, 0.0543032))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.24477, 
+    farPlane=3.1297, cameraPosition=(1.26948, 2.58461, -0.680157), 
+    cameraUpVector=(-0.36031, -0.420819, -0.832519), cameraTarget=(0.296831, 
+    -0.0506606, -0.0774427))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.11277, 
+    farPlane=3.24244, cameraPosition=(2.84783, 0.647587, -0.983512), 
+    cameraUpVector=(-0.523664, -0.433396, -0.733446), cameraTarget=(0.187741, 
+    0.0832197, -0.0564759))
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(cameraPosition=(2.84783, 
+    0.647587, -0.983512), cameraUpVector=(-0.53204, -0.407928, -0.741976), 
+    cameraTarget=(0.187741, 0.0832197, -0.0564759))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.27894, 
+    farPlane=3.08242, cameraPosition=(0.826727, 2.47515, 1.07235), 
+    cameraUpVector=(0.0718597, 0.108869, -0.991455), cameraTarget=(0.335204, 
+    -0.0501224, -0.206475))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.14743, 
+    farPlane=3.21432, cameraPosition=(2.56492, -0.0576829, -1.64695), 
+    cameraUpVector=(-0.67377, 0.58456, -0.452021), cameraTarget=(0.210518, 
+    0.131566, -0.0114104))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.21084, 
+    farPlane=3.15649, cameraPosition=(-0.63166, -1.53029, -1.98304), 
+    cameraUpVector=(0.223936, 0.879734, -0.419428), cameraTarget=(0.439568, 
+    0.237086, 0.0126718))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.17477, 
+    farPlane=3.19717, cameraPosition=(-2.31441, 0.115573, -0.156966), 
+    cameraUpVector=(0.343751, 0.496981, -0.796772), cameraTarget=(0.558275, 
+    0.120982, -0.116145))
+a = mdb.models['Model-1'].rootAssembly
+region1=a.surfaces['Flange_Bottom_Edge']
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Long_Side-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#1 ]', ), )
+s2 = a.instances['Short Side With Holes-1'].faces
+side1Faces2 = s2.getSequenceFromMask(mask=('[#1 ]', ), )
+s3 = a.instances['Long_Side-2'].faces
+side1Faces3 = s3.getSequenceFromMask(mask=('[#1 ]', ), )
+s4 = a.instances['Short Side-1'].faces
+side1Faces4 = s4.getSequenceFromMask(mask=('[#1 ]', ), )
+region2=a.Surface(side1Faces=side1Faces1+side1Faces2+side1Faces3+side1Faces4, 
+    name='All_Sides')
+mdb.models['Model-1'].interactions['Flange_To_Sides'].setValues(master=region1, 
+    slave=region2, initialClearance=OMIT, adjustMethod=NONE, sliding=FINITE, 
+    enforcement=SURFACE_TO_SURFACE, thickness=ON, contactTracking=TWO_CONFIG, 
+    bondingSet=None)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Error in job Pressure_Box_With_Holes: Too many attempts made for this increment
+#: Job Pressure_Box_With_Holes: Abaqus/Standard aborted due to errors.
+#: Error in job Pressure_Box_With_Holes: Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.
+#: Job Pressure_Box_With_Holes aborted due to errors.
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.12652, 
+    farPlane=3.24232, cameraPosition=(-2.14579, -0.801635, -0.286676), 
+    cameraUpVector=(0.214897, 0.533212, -0.818232), cameraTarget=(0.546535, 
+    0.184842, -0.107114))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=2.21284, 
+    farPlane=3.16732, cameraPosition=(-0.646668, 2.1854, -1.49996), 
+    cameraUpVector=(0.293668, -0.713844, -0.635757), cameraTarget=(0.441232, 
+    -0.024976, -0.0218893))
+session.viewports['Viewport: 1'].view.setValues(width=1.17008, height=0.7105, 
+    cameraPosition=(-0.641472, 2.19192, -1.49404), cameraTarget=(0.446429, 
+    -0.0184611, -0.0159713))
+a = mdb.models['Model-1'].rootAssembly
+a.suppressFeatures(('Top_Flange-Copy-1', 'Short Side With Holes-1', ))
+#* FeatureError: Regeneration failed
+a = mdb.models['Model-1'].rootAssembly
+a.suppressFeatures(('Long_Side-2', 'Long_Side-1', 'Short Side-1', ))
+#* FeatureError: Regeneration failed

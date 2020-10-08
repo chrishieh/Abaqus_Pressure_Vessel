@@ -3,21 +3,21 @@ Abaqus JOB Pressure_Box_With_Holes
 Abaqus 3DEXPERIENCE R2019x
 Abaqus License Manager checked out the following licenses:
 Abaqus/Standard checked out 5 tokens from Flexnet server engr-license2.engr.uconn.edu.
-<48 out of 58 licenses remain available>.
-Abaqus Warning: Your Abaqus license will expire in 9 days.
+<45 out of 58 licenses remain available>.
+Abaqus Warning: Your Abaqus license will expire in 7 days.
 Begin Analysis Input File Processor
-10/6/2020 12:55:44 PM
+10/8/2020 8:23:29 AM
 Run pre.exe
-10/6/2020 12:55:50 PM
+10/8/2020 8:23:38 AM
 End Analysis Input File Processor
 Begin Abaqus/Standard Analysis
-10/6/2020 12:55:50 PM
+10/8/2020 8:23:38 AM
 Run standard.exe
-10/6/2020 12:55:55 PM
+10/8/2020 8:23:45 AM
 End Abaqus/Standard Analysis
 Begin Convert MFS to SFS
-10/6/2020 12:55:56 PM
+10/8/2020 8:23:45 AM
 Run SMASimUtility.exe
-10/6/2020 12:55:57 PM
+10/8/2020 8:23:45 AM
 End Convert MFS to SFS
 Abaqus JOB Pressure_Box_With_Holes COMPLETED

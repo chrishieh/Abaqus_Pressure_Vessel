@@ -1,0 +1,48 @@
+<Description>
+   ***  ABAQUS/ABQcaeK rank 0 received the SIGABRT signal
+</Description>
+
+<Callstack>
+</Callstack>
+
+<Memory>
+   <Current>             137 MB </Current>
+   <Physical>           8147 MB </Physical>
+   <Limit>                 0 MB </Limit>
+   <Virtual>       134217728 MB </Virtual>
+   <Accessible>         8147 MB </Accessible>
+   <Allocator>            DL    </Allocator>
+</Memory>
+
+<Directories>
+  <current> C:\Users\chs17004\Desktop\Abaqus Pressure Vessel </current> 
+     <temp> C:\Users\chs17004\AppData\Local\Temp </temp>
+</Directories>
+
+<Installation>
+</Installation>
+
+<Description>
+   ***  ABAQUS/ABQcaeK rank 0 received the SIGABRT signal
+</Description>
+
+<Callstack>
+</Callstack>
+
+<Memory>
+   <Current>             106 MB </Current>
+   <Physical>           8147 MB </Physical>
+   <Limit>                 0 MB </Limit>
+   <Virtual>       134217728 MB </Virtual>
+   <Accessible>         8147 MB </Accessible>
+   <Allocator>            DL    </Allocator>
+</Memory>
+
+<Directories>
+  <current> C:\Users\chs17004\Desktop\Abaqus Pressure Vessel </current> 
+     <temp> C:\Users\chs17004\AppData\Local\Temp </temp>
+</Directories>
+
+<Installation>
+</Installation>
+

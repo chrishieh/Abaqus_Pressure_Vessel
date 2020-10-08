@@ -1,0 +1,2001 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2019 replay file
+# Internal Version: 2018_09_24-14.41.51 157541
+# Run by chs17004 on Wed Oct  7 18:00:06 2020
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=334.271881103516, 
+    height=249.75)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('Pressure_Box With Holes.cae')
+#: The model database "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure_Box With Holes.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+#--- Recover file: 'Pressure_Box With Holes.rec' ---
+# -*- coding: mbcs -*- 
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Bottom'].seedEdgeBySize(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['Bottom'].edges.getSequenceFromMask((
+    '[#fff3933 ]', ), ), size=0.204)
+mdb.models['Model-1'].parts['Bottom'].generateMesh(
+    regions=mdb.models['Model-1'].parts['Bottom'].faces.getSequenceFromMask((
+    '[#f0 ]', ), ))
+mdb.models['Model-1'].parts['Bottom'].deleteMesh(
+    regions=mdb.models['Model-1'].parts['Bottom'].faces.getSequenceFromMask((
+    '[#f0 ]', ), ))
+mdb.models['Model-1'].parts['Bottom'].seedEdgeBySize(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['Bottom'].edges.getSequenceFromMask((
+    '[#fff3933 ]', ), ), size=0.05)
+mdb.models['Model-1'].parts['Bottom'].generateMesh(
+    regions=mdb.models['Model-1'].parts['Bottom'].faces.getSequenceFromMask((
+    '[#f0 ]', ), ))
+mdb.models['Model-1'].parts['Bottom'].deleteMesh(
+    regions=mdb.models['Model-1'].parts['Bottom'].faces.getSequenceFromMask((
+    '[#f0 ]', ), ))
+mdb.models['Model-1'].parts['Bottom'].seedEdgeBySize(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['Bottom'].edges.getSequenceFromMask((
+    '[#fff3933 ]', ), ), size=0.1)
+mdb.models['Model-1'].parts['Bottom'].generateMesh(
+    regions=mdb.models['Model-1'].parts['Bottom'].faces.getSequenceFromMask((
+    '[#f0 ]', ), ))
+mdb.models['Model-1'].parts['Bottom'].deleteMesh(
+    regions=mdb.models['Model-1'].parts['Bottom'].faces.getSequenceFromMask((
+    '[#f0 ]', ), ))
+mdb.models['Model-1'].parts['Bottom'].seedEdgeBySize(constraint=FINER, 
+    edges=mdb.models['Model-1'].parts['Bottom'].edges.getSequenceFromMask((
+    '[#864ffff ]', ), ), size=0.1)
+mdb.models['Model-1'].parts['Bottom'].generateMesh(
+    regions=mdb.models['Model-1'].parts['Bottom'].faces.getSequenceFromMask((
+    '[#10f ]', ), ))
+mdb.models['Model-1'].parts['Bottom'].generateMesh(
+    regions=mdb.models['Model-1'].parts['Bottom'].faces.getSequenceFromMask((
+    '[#f0 ]', ), ))
+mdb.models['Model-1'].parts['Bottom'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACES ASSEMBLY_Side 1 slave surface AND ASSEMBLY_S_SURF-37 INTERSECT EACH OTHER. THEY ARE PAIRED WITH MASTER SURFACES ASSEMBLY_BOTTOM_MASTER_SURFACE AND ASSEMBLY_M_SURF-37 THAT ALSO INTERSECT EACH OTHER. IF BOTH PAIRS ARE *CONTACT PAIRs, THESE TWO PAIRS SHOULD NOT BE SIMULTANEOUSLY PRESENT IN A STEP BECAUSE OF POSSIBLE CONVERGENCE PROBLEMS; USE *MODEL CHANGE,TYPE=CONTACT PAIR TO REMOVE ONE OF THEM. IF BOTH ARE *TIE PAIRS, THE REDUNDANT TIES WILL BE REMOVED AUTOMATICALLY. IF ONE PAIR IS *TIE AND ANOTHER IS *CONTACT PAIR, REMOVE ONE OF THEM.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-14_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), NOT ALL THE NODES THAT HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_Cap Bottom Surface-ASSEMBLY_Flange Top Surface), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-22_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-22_CNS_-ASSEMBLY_M_SET-22_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PLEASE MAKE SURE THAT THE MESH DENSITY OF THE SLAVE SURFACE IN THE TIE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS FINER THAN THE MASTER SURFACE.  THE ANALYSIS MAY RUN SLOWER, MAY YIELD INACCURATE RESULTS, AND MAY REQUIRE MORE MEMORY IF THIS IS NOT THE CASE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-17-ASSEMBLY_FLANGE_BOTTOM_EDGE), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-45,ASSEMBLY_M_SURF-45) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-45-ASSEMBLY_M_SURF-45), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '33 nodes have been adjusted. The nodes have been identified in node set WarnNodeAdjust.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 9 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 7 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 14 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 49 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 43 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 318 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 20 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 44 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 45 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 46 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 47 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 48 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 5 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 354 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 19 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '3358 nodes are either missing intersection with their respective master surface or are outside the adjust zone. The nodes have been identified in node set WarnNodeMissMasterIntersect.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '18 nodes are used more than once as a slave node in *TIE keyword. One of the *TIE constraints at each of these nodes have been removed. The nodes have been identified in node set WarnNodeOverconTieSlave.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '16 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 4664, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Pressure_Box_With_Holes', 
+    'memory': 219.0})
+mdb.jobs['Pressure_Box_With_Holes']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8147.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 35.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 1.0, 
+    'increment': 1, 'attempts': 1, 'iterations': 3, 'phase': STANDARD_PHASE, 
+    'timeIncrement': 1.0, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 3})
+mdb.jobs['Pressure_Box_With_Holes']._Message(END_STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': STANDARD_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_COMPLETED, {
+    'time': 'Wed Oct  7 17:32:31 2020', 'jobName': 'Pressure_Box_With_Holes'})
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', 
+    objectToCopy=mdb.models['Model-1'].parts['Bottom'].features['Shell extrude-1'].sketch)
+mdb.models['Model-1'].parts['Bottom'].projectReferencesOntoSketch(
+    filter=COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=mdb.models['Model-1'].parts['Bottom'].features['Shell extrude-1'])
+mdb.models['Model-1'].sketches['__edit__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].geometry[79], 
+    mdb.models['Model-1'].sketches['__edit__'].geometry[78], 
+    mdb.models['Model-1'].sketches['__edit__'].geometry[79]))
+mdb.models['Model-1'].sketches['__edit__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].geometry[81], 
+    mdb.models['Model-1'].sketches['__edit__'].geometry[80]))
+mdb.models['Model-1'].sketches['__edit__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].geometry[83], ))
+mdb.models['Model-1'].sketches['__edit__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].geometry[82], ))
+mdb.models['Model-1'].sketches['__edit__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].geometry[84], ))
+mdb.models['Model-1'].sketches['__edit__'].setAsConstruction(objectList=(
+    mdb.models['Model-1'].sketches['__edit__'].geometry[85], ))
+mdb.models['Model-1'].parts['Bottom'].features['Shell extrude-1'].setValues(
+    sketch=mdb.models['Model-1'].sketches['__edit__'])
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].parts['Bottom'].regenerate()
+#: Warning: Mesh deleted in 8 regions due to geometry association failure.
+#* FeatureError: Regeneration failed
+#* FeatureError: Regeneration failed 
+mdb.models['Model-1'].parts['Bottom'].backup()
+del mdb.models['Model-1'].parts['Bottom'].features['Remove faces-2']
+mdb.models['Model-1'].parts['Bottom'].deleteMesh()
+mdb.models['Model-1'].parts['Bottom'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.05)
+mdb.models['Model-1'].parts['Bottom'].generateMesh()
+mdb.models['Model-1'].parts['Bottom'].deleteMesh()
+mdb.models['Model-1'].parts['Bottom'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.01)
+mdb.models['Model-1'].parts['Bottom'].generateMesh()
+mdb.models['Model-1'].parts['Bottom'].generateMesh()
+mdb.models['Model-1'].parts['Bottom'].deleteMesh()
+mdb.models['Model-1'].parts['Bottom'].deleteSeeds()
+mdb.models['Model-1'].parts['Bottom'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, 
+    edges=mdb.models['Model-1'].parts['Bottom'].edges.getSequenceFromMask((
+    '[#fff ]', ), ), minSizeFactor=0.1, size=0.05)
+mdb.models['Model-1'].parts['Bottom'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, 
+    edges=mdb.models['Model-1'].parts['Bottom'].edges.getSequenceFromMask((
+    '[#f ]', ), ), minSizeFactor=0.1, size=0.01)
+mdb.models['Model-1'].parts['Bottom'].generateMesh()
+mdb.models['Model-1'].parts['Bottom'].deleteMesh()
+mdb.models['Model-1'].parts['Bottom'].seedEdgeBySize(constraint=FINER, 
+    deviationFactor=0.1, 
+    edges=mdb.models['Model-1'].parts['Bottom'].edges.getSequenceFromMask((
+    '[#fff ]', ), ), minSizeFactor=0.1, size=0.05)
+mdb.models['Model-1'].parts['Bottom'].generateMesh()
+mdb.models['Model-1'].rootAssembly.regenerate()
+#* FeatureError: Regeneration failed
+#* FeatureError: Regeneration failed 
+del mdb.models['Model-1'].rootAssembly.features['Top_Flange-1']
+mdb.models['Model-1'].rootAssembly.EdgeToEdge(
+    fixedAxis=mdb.models['Model-1'].rootAssembly.instances['Bottom-1'].edges[2], 
+    flip=OFF, 
+    movableAxis=mdb.models['Model-1'].rootAssembly.instances['Short Side With Holes-1'].edges[3])
+#* Constraint creation failed
+#* Constraint creation failed 
+mdb.models['Model-1'].rootAssembly.EdgeToEdge(
+    fixedAxis=mdb.models['Model-1'].rootAssembly.instances['Long_Side-2'].edges[0], 
+    flip=OFF, 
+    movableAxis=mdb.models['Model-1'].rootAssembly.instances['Bottom-1'].edges[1])
+#* FeatureError: This constraint will create a dependency cycle.
+#* Please reselect the entities to define the constraint.
+#* FeatureError: This constraint will create a dependency cycle. 
+#* Please reselect the entities to define the constraint. 
+mdb.models['Model-1'].rootAssembly.EdgeToEdge(
+    fixedAxis=mdb.models['Model-1'].rootAssembly.instances['Bottom-1'].edges[1], 
+    flip=OFF, 
+    movableAxis=mdb.models['Model-1'].rootAssembly.instances['Long_Side-2'].edges[0])
+#* Constraint creation failed
+#* Constraint creation failed 
+del mdb.models['Model-1'].rootAssembly.sets['Set-8']
+mdb.models['Model-1'].rootAssembly.Set(
+    edges=mdb.models['Model-1'].rootAssembly.instances['Bottom-1'].edges.getSequenceFromMask(
+    ('[#ff0 ]', ), ), name='Mounting_Edges')
+mdb.models['Model-1'].XsymmBC(createStepName='Step-1', localCsys=None, 
+    name='Base_Mount', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Mounting_Edges'])
+del mdb.models['Model-1'].boundaryConditions['BC-1']
+mdb.models['Model-1'].rootAssembly.Surface(name='Bottom_master_surface', 
+    side2Faces=mdb.models['Model-1'].rootAssembly.instances['Bottom-1'].faces.getSequenceFromMask(
+    ('[#3 ]', ), ))
+del mdb.models['Model-1'].rootAssembly.surfaces['Surf-39']
+mdb.models['Model-1'].rootAssembly.Surface(name='Bottom_Pressure_Surface', 
+    side2Faces=mdb.models['Model-1'].rootAssembly.instances['Bottom-1'].faces.getSequenceFromMask(
+    ('[#3 ]', ), ))
+mdb.models['Model-1'].loads['Bottom_Pressure'].setValues(
+    region=mdb.models['Model-1'].rootAssembly.surfaces['Bottom_Pressure_Surface'])
+mdb.models['Model-1'].rootAssembly.Surface(name='m_Surf-37', 
+    side1Faces=mdb.models['Model-1'].rootAssembly.instances['Top_Flange-Copy-1'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-14_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), NOT ALL THE NODES THAT HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '23 nodes have been adjusted. The nodes have been identified in node set WarnNodeAdjust.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_Cap Bottom Surface-ASSEMBLY_Flange Top Surface), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-22_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-22_CNS_-ASSEMBLY_M_SET-22_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PLEASE MAKE SURE THAT THE MESH DENSITY OF THE SLAVE SURFACE IN THE TIE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS FINER THAN THE MASTER SURFACE.  THE ANALYSIS MAY RUN SLOWER, MAY YIELD INACCURATE RESULTS, AND MAY REQUIRE MORE MEMORY IF THIS IS NOT THE CASE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-17-ASSEMBLY_FLANGE_BOTTOM_EDGE), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-45,ASSEMBLY_M_SURF-45) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-45-ASSEMBLY_M_SURF-45), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 7 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 49 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 43 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 318 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 20 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 44 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 45 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 46 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 47 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 48 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 5 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 354 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 18 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '3358 nodes are either missing intersection with their respective master surface or are outside the adjust zone. The nodes have been identified in node set WarnNodeMissMasterIntersect.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '18 nodes are used more than once as a slave node in *TIE keyword. One of the *TIE constraints at each of these nodes have been removed. The nodes have been identified in node set WarnNodeOverconTieSlave.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '5 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 2360, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Pressure_Box_With_Holes', 
+    'memory': 221.0})
+mdb.jobs['Pressure_Box_With_Holes']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8147.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 35.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 1U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 1.0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 2U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.25, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 3U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.0625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 4U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.015625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 5U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.00390625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.models['Model-1'].rootAssembly.features['Cap-Copy-1'].suppress()
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.models['Model-1'].loads['Cap_Pressure'].suppress()
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'SURFACE DEFINITION ASSEMBLY_Cap Bottom Surface NOT FOUND.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-14_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), NOT ALL THE NODES THAT HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-22_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '23 nodes have been adjusted. The nodes have been identified in node set WarnNodeAdjust.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-22_CNS_-ASSEMBLY_M_SET-22_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PLEASE MAKE SURE THAT THE MESH DENSITY OF THE SLAVE SURFACE IN THE TIE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS FINER THAN THE MASTER SURFACE.  THE ANALYSIS MAY RUN SLOWER, MAY YIELD INACCURATE RESULTS, AND MAY REQUIRE MORE MEMORY IF THIS IS NOT THE CASE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-17-ASSEMBLY_FLANGE_BOTTOM_EDGE), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-45,ASSEMBLY_M_SURF-45) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-45-ASSEMBLY_M_SURF-45), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 7 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 49 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 43 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 318 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 20 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 44 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 45 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 46 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 47 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 48 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 5 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 354 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 18 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '375 nodes are either missing intersection with their respective master surface or are outside the adjust zone. The nodes have been identified in node set WarnNodeMissMasterIntersect.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '18 nodes are used more than once as a slave node in *TIE keyword. One of the *TIE constraints at each of these nodes have been removed. The nodes have been identified in node set WarnNodeOverconTieSlave.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SURFACE ASSEMBLY_Cap Bottom Surface HAS NOT BEEN LOCATED', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-14_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), NOT ALL THE NODES THAT HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-22_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '23 nodes have been adjusted. The nodes have been identified in node set WarnNodeAdjust.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-22_CNS_-ASSEMBLY_M_SET-22_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PLEASE MAKE SURE THAT THE MESH DENSITY OF THE SLAVE SURFACE IN THE TIE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS FINER THAN THE MASTER SURFACE.  THE ANALYSIS MAY RUN SLOWER, MAY YIELD INACCURATE RESULTS, AND MAY REQUIRE MORE MEMORY IF THIS IS NOT THE CASE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-17-ASSEMBLY_FLANGE_BOTTOM_EDGE), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-45,ASSEMBLY_M_SURF-45) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-45-ASSEMBLY_M_SURF-45), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACE ASSEMBLY_Cap Bottom Surface DOES NOT EXIST.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 7 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 49 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 43 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 318 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 20 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 44 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 45 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 46 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 47 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 48 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 5 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 354 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 18 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '375 nodes are either missing intersection with their respective master surface or are outside the adjust zone. The nodes have been identified in node set WarnNodeMissMasterIntersect.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '18 nodes are used more than once as a slave node in *TIE keyword. One of the *TIE constraints at each of these nodes have been removed. The nodes have been identified in node set WarnNodeOverconTieSlave.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.models['Model-1'].constraints['Cap to flange'].suppress()
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.models['Model-1'].constraints.delete(('Constraint-7', 'Constraint-3', 
+    'Constraint-4'))
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-14_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), NOT ALL THE NODES THAT HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-22_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '23 nodes have been adjusted. The nodes have been identified in node set WarnNodeAdjust.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-22_CNS_-ASSEMBLY_M_SET-22_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PLEASE MAKE SURE THAT THE MESH DENSITY OF THE SLAVE SURFACE IN THE TIE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS FINER THAN THE MASTER SURFACE.  THE ANALYSIS MAY RUN SLOWER, MAY YIELD INACCURATE RESULTS, AND MAY REQUIRE MORE MEMORY IF THIS IS NOT THE CASE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-17-ASSEMBLY_FLANGE_BOTTOM_EDGE), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-45,ASSEMBLY_M_SURF-45) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-45-ASSEMBLY_M_SURF-45), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 7 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 49 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 43 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 318 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 20 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 44 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 45 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 46 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 47 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 48 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 5 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 354 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 18 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '375 nodes are either missing intersection with their respective master surface or are outside the adjust zone. The nodes have been identified in node set WarnNodeMissMasterIntersect.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '18 nodes are used more than once as a slave node in *TIE keyword. One of the *TIE constraints at each of these nodes have been removed. The nodes have been identified in node set WarnNodeOverconTieSlave.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 12096, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Pressure_Box_With_Holes', 
+    'memory': 50.0})
+mdb.jobs['Pressure_Box_With_Holes']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8147.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 26.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 1U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 1.0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 2U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.25, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 3U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.0625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 4U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.015625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 5U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.00390625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF, 
+    datacheckJob=True)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-14_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), NOT ALL THE NODES THAT HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-22_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '23 nodes have been adjusted. The nodes have been identified in node set WarnNodeAdjust.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-22_CNS_-ASSEMBLY_M_SET-22_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PLEASE MAKE SURE THAT THE MESH DENSITY OF THE SLAVE SURFACE IN THE TIE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS FINER THAN THE MASTER SURFACE.  THE ANALYSIS MAY RUN SLOWER, MAY YIELD INACCURATE RESULTS, AND MAY REQUIRE MORE MEMORY IF THIS IS NOT THE CASE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-17-ASSEMBLY_FLANGE_BOTTOM_EDGE), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-45,ASSEMBLY_M_SURF-45) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-45-ASSEMBLY_M_SURF-45), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 7 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 49 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 43 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 318 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 20 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 44 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 45 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 46 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 47 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 48 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 5 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 354 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 18 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '375 nodes are either missing intersection with their respective master surface or are outside the adjust zone. The nodes have been identified in node set WarnNodeMissMasterIntersect.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '18 nodes are used more than once as a slave node in *TIE keyword. One of the *TIE constraints at each of these nodes have been removed. The nodes have been identified in node set WarnNodeOverconTieSlave.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 6608, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Pressure_Box_With_Holes', 
+    'memory': 26.0})
+mdb.jobs['Pressure_Box_With_Holes']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8147.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 16.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': STANDARD_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_COMPLETED, {
+    'time': 'Wed Oct  7 17:48:03 2020', 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-14_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), NOT ALL THE NODES THAT HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-22_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '23 nodes have been adjusted. The nodes have been identified in node set WarnNodeAdjust.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-22_CNS_-ASSEMBLY_M_SET-22_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PLEASE MAKE SURE THAT THE MESH DENSITY OF THE SLAVE SURFACE IN THE TIE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS FINER THAN THE MASTER SURFACE.  THE ANALYSIS MAY RUN SLOWER, MAY YIELD INACCURATE RESULTS, AND MAY REQUIRE MORE MEMORY IF THIS IS NOT THE CASE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-17-ASSEMBLY_FLANGE_BOTTOM_EDGE), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-45,ASSEMBLY_M_SURF-45) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-45-ASSEMBLY_M_SURF-45), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 7 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 49 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 43 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 318 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 20 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 44 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 45 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 46 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 47 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 48 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 5 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 354 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 18 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '375 nodes are either missing intersection with their respective master surface or are outside the adjust zone. The nodes have been identified in node set WarnNodeMissMasterIntersect.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '18 nodes are used more than once as a slave node in *TIE keyword. One of the *TIE constraints at each of these nodes have been removed. The nodes have been identified in node set WarnNodeOverconTieSlave.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+del mdb.models['Model-1'].interactions['Int-6']
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 4500, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Pressure_Box_With_Holes', 
+    'memory': 50.0})
+mdb.jobs['Pressure_Box_With_Holes']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8147.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.models['Model-1'].interactions['Flange_To_Sides'].resume()
+mdb.jobs['Pressure_Box_With_Holes']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 26.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 1U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 1.0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 2U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.25, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 3U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.0625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 4U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.015625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 5U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.00390625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.models['Model-1'].rootAssembly.Surface(name='All_Sides', 
+    side1Faces=mdb.models['Model-1'].rootAssembly.instances['Long_Side-1'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Short Side With Holes-1'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Long_Side-2'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Short Side-1'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), ))
+mdb.models['Model-1'].interactions['Flange_To_Sides'].setValues(
+    adjustMethod=NONE, bondingSet=None, contactTracking=TWO_CONFIG, 
+    enforcement=SURFACE_TO_SURFACE, initialClearance=OMIT, 
+    master=mdb.models['Model-1'].rootAssembly.surfaces['Flange_Bottom_Edge'], 
+    slave=mdb.models['Model-1'].rootAssembly.surfaces['All_Sides'], 
+    sliding=FINITE, thickness=ON)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE SLAVE SURFACES ASSEMBLY_ALL_SIDES AND ASSEMBLY_S_SURF-37 INTERSECT EACH OTHER. THEY ARE PAIRED WITH MASTER SURFACES ASSEMBLY_FLANGE_BOTTOM_EDGE AND ASSEMBLY_M_SURF-37 THAT ALSO INTERSECT EACH OTHER. IF BOTH PAIRS ARE *CONTACT PAIRs, THESE TWO PAIRS SHOULD NOT BE SIMULTANEOUSLY PRESENT IN A STEP BECAUSE OF POSSIBLE CONVERGENCE PROBLEMS; USE *MODEL CHANGE,TYPE=CONTACT PAIR TO REMOVE ONE OF THEM. IF BOTH ARE *TIE PAIRS, THE REDUNDANT TIES WILL BE REMOVED AUTOMATICALLY. IF ONE PAIR IS *TIE AND ANOTHER IS *CONTACT PAIR, REMOVE ONE OF THEM.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-14_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), NOT ALL THE NODES THAT HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-14_CNS_-ASSEMBLY_BOTTOM-1_BOTTOM_PLATE_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'SLAVE SURFACE ASSEMBLY_S_SET-22_CNS_ IS A NODE-BASED SURFACE USED WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE USED INSTEAD.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '23 nodes have been adjusted. The nodes have been identified in node set WarnNodeAdjust.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SET-22_CNS_-ASSEMBLY_M_SET-22_CNS_), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'PLEASE MAKE SURE THAT THE MESH DENSITY OF THE SLAVE SURFACE IN THE TIE PAIR (ASSEMBLY_S_SURF-17,ASSEMBLY_FLANGE_BOTTOM_EDGE) IS FINER THAN THE MASTER SURFACE.  THE ANALYSIS MAY RUN SLOWER, MAY YIELD INACCURATE RESULTS, AND MAY REQUIRE MORE MEMORY IF THIS IS NOT THE CASE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-17-ASSEMBLY_FLANGE_BOTTOM_EDGE), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '*TIE BETWEEN SURFACE PAIR (ASSEMBLY_S_SURF-45,ASSEMBLY_M_SURF-45) IS REVERTED BACK TO TYPE NODE-TO-SURFACE. THIS CASE MAY HAPPEN IF TYPE SURFACE-TO-SURFACE CANNOT FIND NODES TO TIE TOGETHER OR IF DEFAULT ACOUSTIC-STRUCTURAL TIE IS SPECIFIED INVOLVING SHELLS. PLEASE CHECK THE SURFACE DEFINITIONS OR SPECIFY TYPE=SURFACE TO SURFACE FOR ACOUSTIC-STRUCTURAL TIE.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_S_SURF-45-ASSEMBLY_M_SURF-45), ADJUSTMENT WAS SPECIFIED BUT NO NODE WAS ADJUSTED MORE THAN THE ADJUSTMENT DISTANCE = 2.22000E-16.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 7 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE BOTTOM-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 49 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 43 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 1 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 318 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 16 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 20 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 44 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 45 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 46 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 47 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-1 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 48 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 17 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 6 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 33 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 5 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 49 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 4 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 65 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 3 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 81 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 2 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 1 INSTANCE Short Side-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 97 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 354 INSTANCE TOP_FLANGE-COPY-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'OVERCONSTRAINT CHECKS: NODE 112 INSTANCE LONG_SIDE-2 IS USED MORE THAN ONCE AS A SLAVE NODE IN THE *TIE KEYWORD.  THE CONSTRAINT BETWEEN THIS NODE AND THE MASTER SURFACE WITH NODE 18 INSTANCE Short Side With Holes-1 IS REMOVED.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '375 nodes are either missing intersection with their respective master surface or are outside the adjust zone. The nodes have been identified in node set WarnNodeMissMasterIntersect.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '18 nodes are used more than once as a slave node in *TIE keyword. One of the *TIE constraints at each of these nodes have been removed. The nodes have been identified in node set WarnNodeOverconTieSlave.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 elements are distorted. Either the isoparametric angles are out of the suggested limits or the triangular or tetrahedral quality measure is bad. The elements have been identified in element set WarnElemDistorted.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 128, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'jobName': 'Pressure_Box_With_Holes', 
+    'memory': 51.0})
+mdb.jobs['Pressure_Box_With_Holes']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8147.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 28.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 1U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 1.0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 2U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.25, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 3U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.0625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 4U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.015625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'DISPLACEMENT INCREMENT FOR CONTACT IS TOO BIG.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 5U', 'iterations': 1, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.00390625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.models['Model-1'].rootAssembly.suppressFeatures(('Top_Flange-Copy-1', 
+    'Short Side With Holes-1'))
+#* FeatureError: Regeneration failed
+#* FeatureError: Regeneration failed 
+mdb.models['Model-1'].rootAssembly.suppressFeatures(('Long_Side-2', 
+    'Long_Side-1', 'Short Side-1'))
+#* FeatureError: Regeneration failed
+#* FeatureError: Regeneration failed 
+mdb.models['Model-1'].loads['Sides_Pressure'].suppress()
+mdb.models['Model-1'].constraints['Bottom to Sides'].suppress()
+mdb.models['Model-1'].constraints['Cap to flange'].suppress()
+mdb.models['Model-1'].constraints['Cap to sides'].suppress()
+mdb.models['Model-1'].constraints['Constraint-8'].suppress()
+mdb.models['Model-1'].constraints['Flange to Sides'].suppress()
+mdb.models['Model-1'].constraints['Sides to sides'].suppress()
+mdb.models['Model-1'].interactions['Sides to sides'].suppress()
+mdb.models['Model-1'].interactions['Cap_To_Flange'].suppress()
+mdb.models['Model-1'].interactions['Flange_To_Sides'].suppress()
+mdb.models['Model-1'].interactions['Sides to Cap'].suppress()
+mdb.models['Model-1'].interactions['Bottom to sides 1'].suppress()
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 9392, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'memory': 25.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8147.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 17.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 1U', 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 1.0, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 5})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 2U', 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.25, 'stepTime': 0.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 5})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 3U', 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.0625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 5})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 4U', 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.015625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 5})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 0.0, 
+    'increment': 1, 'attempts': ' 5U', 'iterations': 5, 
+    'phase': STANDARD_PHASE, 'timeIncrement': 0.00390625, 'stepTime': 0.0, 
+    'step': 1, 'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 
+    'equilibrium': 5})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {'phase': STANDARD_PHASE, 
+    'message': 'Too many attempts made for this increment', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ABORTED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase failed due to errors', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ERROR, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_ABORTED, {
+    'message': 'Abaqus/Standard Analysis exited with an error - Please see the  message file for possible error messages if the file exists.', 
+    'jobName': 'Pressure_Box_With_Holes'})
+del mdb.models['Model-1'].boundaryConditions['Base_Mount']
+mdb.models['Model-1'].rootAssembly.Set(
+    edges=mdb.models['Model-1'].rootAssembly.instances['Bottom-1'].edges.getSequenceFromMask(
+    ('[#ff0 ]', ), ), name='Bottom Mounting Edges')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, 
+    name='BC-1', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Bottom Mounting Edges'], 
+    u1=0.0, u2=0.0, u3=0.0, ur1=UNSET, ur2=UNSET, ur3=UNSET)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FILE, {
+    'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box_With_Holes.odb', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': BATCHPRE_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'FFM5TW1', 'handle': 7368, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STEP, {'phase': STANDARD_PHASE, 
+    'stepId': 1, 'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MEMORY_ESTIMATE, {
+    'phase': STANDARD_PHASE, 'memory': 25.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(PHYSICAL_MEMORY, {
+    'phase': STANDARD_PHASE, 'physical_memory': 8147.0, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(MINIMUM_MEMORY, {
+    'minimum_memory': 17.0, 'phase': STANDARD_PHASE, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(ODB_FRAME, {
+    'phase': STANDARD_PHASE, 'step': 0, 'frame': 1, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(STATUS, {'totalTime': 1.0, 
+    'increment': 1, 'attempts': 1, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'timeIncrement': 1.0, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Pressure_Box_With_Holes', 'severe': 0, 'equilibrium': 1})
+mdb.jobs['Pressure_Box_With_Holes']._Message(END_STEP, {
+    'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(COMPLETED, {
+    'phase': STANDARD_PHASE, 'message': 'Analysis phase complete', 
+    'jobName': 'Pressure_Box_With_Holes'})
+mdb.jobs['Pressure_Box_With_Holes']._Message(JOB_COMPLETED, {
+    'jobName': 'Pressure_Box_With_Holes', 'time': 'Wed Oct  7 17:57:34 2020'})
+mdb.models['Model-1'].rootAssembly.resumeFeatures(('Cap-Copy-1', 
+    'Short Side-1', 'Long_Side-2', 'Bottom-1', 'Short Side With Holes-1', 
+    'Top_Flange-Copy-1', 'Long_Side-1'))
+#* FeatureError: Regeneration failed
+#* FeatureError: Regeneration failed 
+mdb.models['Model-1'].rootAssembly.resumeFeatures(('Coincident Point-1', 
+    'Coincident Point-2'))
+#* FeatureError: Regeneration failed
+#* FeatureError: Regeneration failed 
+mdb.models['Model-1'].rootAssembly.features['Coincident Point-3'].resume()
+#* FeatureError: Regeneration failed
+#* FeatureError: Regeneration failed 
+mdb.models['Model-1'].rootAssembly.restore()
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.resumeFeatures(('Coincident Point-4', 
+    'Edge to Edge-4', 'Edge to Edge-5', 'Edge to Edge-6', 'Edge to Edge-7', 
+    'Edge to Edge-8', 'Edge to Edge-9'))
+#* FeatureError: Regeneration failed
+#* FeatureError: Regeneration failed 
+#--- End of Recover file ------
+mdb.save()
+#: The model database has been saved to "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure_Box With Holes.cae".
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(
+    optimizationTasks=OFF, geometricRestrictions=OFF, stopConditions=OFF)
+session.viewports['Viewport: 1'].view.setValues(width=1.12987, height=0.669806, 
+    viewOffsetX=0.0327733, viewOffsetY=-0.0108822)
+a = mdb.models['Model-1'].rootAssembly
+a.regenerate()
+a = mdb.models['Model-1'].rootAssembly
+a.features['Edge to Edge-1'].suppress()
+#* FeatureError: Regeneration failed
+a = mdb.models['Model-1'].rootAssembly
+a.features['Edge to Edge-1'].resume()
+#* FeatureError: Regeneration failed
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.61763, 
+    farPlane=2.72036, width=1.13178, height=0.670942, cameraPosition=(2.35938, 
+    -0.130336, -0.947538), cameraUpVector=(-0.445233, 0.792197, -0.417363), 
+    cameraTarget=(0.454492, 0.112528, -0.123421), viewOffsetX=0.0328289, 
+    viewOffsetY=-0.0109007)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.79862, 
+    farPlane=2.59464, width=1.25842, height=0.746011, cameraPosition=(
+    0.0691975, -1.79764, -1.15258), cameraUpVector=(-0.000935256, 0.744924, 
+    -0.667148), cameraTarget=(0.397638, 0.0173983, -0.170484), 
+    viewOffsetX=0.036502, viewOffsetY=-0.0121203)
+a = mdb.models['Model-1'].rootAssembly
+del a.features['Edge to Edge-1']
+#* Regeneration Failed
+a = mdb.models['Model-1'].rootAssembly
+del a.features['Edge to Edge-2']
+a = mdb.models['Model-1'].rootAssembly
+del a.features['Edge to Edge-3']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.63063, 
+    farPlane=2.76518, width=1.14089, height=0.676338, cameraPosition=(1.99692, 
+    -1.25345, -0.677098), cameraUpVector=(-0.359287, 0.445181, -0.820199), 
+    cameraTarget=(0.477368, 0.0762604, -0.13898), viewOffsetX=0.0330928, 
+    viewOffsetY=-0.0109883)
+mdb.save()
+#: The model database has been saved to "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure_Box With Holes.cae".
+mdb.models['Model-1'].constraints['Bottom to Sides'].resume()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+mdb.models['Model-1'].constraints['Cap to flange'].resume()
+mdb.models['Model-1'].constraints['Cap to sides'].resume()
+mdb.models['Model-1'].constraints['Flange to Sides'].resume()
+mdb.models['Model-1'].constraints['Sides to sides'].resume()
+mdb.models['Model-1'].constraints['Constraint-8'].resume()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(step='Step-1')
+mdb.models['Model-1'].interactions['Bottom to sides 1'].resume()
+mdb.models['Model-1'].interactions['Cap_To_Flange'].resume()
+mdb.models['Model-1'].interactions['Flange_To_Sides'].resume()
+mdb.models['Model-1'].interactions['Sides to Cap'].resume()
+mdb.models['Model-1'].interactions['Sides to sides'].resume()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.61796, 
+    farPlane=2.76468, width=1.13203, height=0.699909, cameraPosition=(2.39587, 
+    0.660494, -0.754148), cameraUpVector=(-0.6356, 0.130606, -0.76089), 
+    cameraTarget=(0.459109, 0.179334, -0.134333), viewOffsetX=0.0328357, 
+    viewOffsetY=-0.0109029)
+mdb.models['Model-1'].interactions['Bottom to sides 1'].suppress()
+mdb.models['Model-1'].interactions['Cap_To_Flange'].suppress()
+mdb.models['Model-1'].interactions['Flange_To_Sides'].suppress()
+mdb.models['Model-1'].interactions['Sides to Cap'].suppress()
+mdb.models['Model-1'].interactions['Sides to sides'].suppress()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=ON, 
+    constraints=ON, connectors=ON, engineeringFeatures=ON)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.61411, 
+    farPlane=2.76816, width=1.12934, height=0.698245, cameraPosition=(2.27823, 
+    1.08944, -0.581918), cameraUpVector=(-0.378498, -0.403811, -0.832872), 
+    cameraTarget=(0.44346, 0.18848, -0.147613), viewOffsetX=0.0327576, 
+    viewOffsetY=-0.010877)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.79467, 
+    farPlane=2.59113, width=1.25567, height=0.776355, cameraPosition=(
+    0.0248417, 1.91522, 1.08948), cameraUpVector=(-0.353065, 0.145112, 
+    -0.924277), cameraTarget=(0.316405, 0.186019, -0.0470027), 
+    viewOffsetX=0.0364219, viewOffsetY=-0.0120937)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.80742, 
+    farPlane=2.57837, width=0.928089, height=0.573819, viewOffsetX=0.0424656, 
+    viewOffsetY=0.0493757)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.84088, 
+    farPlane=2.53181, width=0.94527, height=0.584441, cameraPosition=(0.425894, 
+    1.87122, 1.1873), cameraUpVector=(-0.322885, 0.268748, -0.90748), 
+    cameraTarget=(0.327265, 0.185921, -0.0442723), viewOffsetX=0.0432518, 
+    viewOffsetY=0.0502897)
+session.viewports['Viewport: 1'].assemblyDisplay.hideInstances(instances=(
+    'Cap-Copy-1', ))
+a = mdb.models['Model-1'].rootAssembly
+s1 = a.instances['Top_Flange-Copy-1'].faces
+side1Faces1 = s1.getSequenceFromMask(mask=('[#1 ]', ), )
+a.Surface(side1Faces=side1Faces1, name='m_Surf-47')
+#: The surface 'm_Surf-47' has been edited (1 face).
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(interactions=OFF, 
+    constraints=OFF, connectors=OFF, engineeringFeatures=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     7
+#: Number of Meshes:             7
+#: Number of Element Sets:       27
+#: Number of Node Sets:          29
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.54525, 
+    farPlane=2.69321, width=0.974426, height=0.602468, cameraPosition=(2.09018, 
+    -0.94279, -0.713908), cameraUpVector=(-0.183094, 0.740743, -0.646356), 
+    cameraTarget=(0.398284, 0.117404, -0.0972986))
+a = mdb.models['Model-1'].rootAssembly
+session.viewports['Viewport: 1'].setValues(displayedObject=a)
+mdb.models['Model-1'].loads['Sides_Pressure'].resume()
+mdb.models['Model-1'].loads['Cap_Pressure'].resume()
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=ON, bcs=ON, 
+    predefinedFields=ON, connectors=ON)
+session.viewports['Viewport: 1'].assemblyDisplay.setValues(loads=OFF, bcs=OFF, 
+    predefinedFields=OFF, connectors=OFF)
+mdb.jobs['Pressure_Box_With_Holes'].submit(consistencyChecking=OFF)
+#: The job input file "Pressure_Box_With_Holes.inp" has been submitted for analysis.
+#: Job Pressure_Box_With_Holes: Analysis Input File Processor completed successfully.
+#: Job Pressure_Box_With_Holes: Abaqus/Standard completed successfully.
+#: Job Pressure_Box_With_Holes completed successfully. 
+session.viewports['Viewport: 1'].setValues(
+    displayedObject=session.odbs['C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb'])
+o3 = session.openOdb(
+    name='C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb')
+#: Model: C:/Users/chs17004/Desktop/Abaqus Pressure Vessel/Pressure_Box_With_Holes.odb
+#: Number of Assemblies:         1
+#: Number of Assembly instances: 0
+#: Number of Part instances:     7
+#: Number of Meshes:             7
+#: Number of Element Sets:       27
+#: Number of Node Sets:          29
+#: Number of Steps:              1
+session.viewports['Viewport: 1'].setValues(displayedObject=o3)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].odbDisplay.display.setValues(plotState=(
+    CONTOURS_ON_DEF, ))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.53462, 
+    farPlane=2.72017, width=0.967722, height=0.598323, cameraPosition=(1.92559, 
+    -1.04714, -0.946634), cameraUpVector=(-0.281089, 0.706367, -0.649641), 
+    cameraTarget=(0.401912, 0.108016, -0.103562))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55795, 
+    farPlane=2.72065, width=0.982432, height=0.607418, cameraPosition=(2.17242, 
+    1.21672, 0.242627), cameraUpVector=(-0.386915, 0.257057, -0.885561), 
+    cameraTarget=(0.406289, 0.148157, -0.0824749))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.55676, 
+    farPlane=2.72183, width=0.981684, height=0.606955, cameraPosition=(2.17242, 
+    1.21672, 0.242627), cameraUpVector=(-0.44636, 0.337971, -0.828577), 
+    cameraTarget=(0.406289, 0.148157, -0.0824749))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.71937, 
+    farPlane=2.5705, width=1.08422, height=0.670354, cameraPosition=(0.0339617, 
+    2.12299, 0.592891), cameraUpVector=(-0.10341, -0.0341166, -0.994054), 
+    cameraTarget=(0.356685, 0.169179, -0.07435))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.74253, 
+    farPlane=2.55399, width=1.09883, height=0.679382, cameraPosition=(
+    -0.012694, 2.22212, 0.0769829), cameraUpVector=(-0.0439129, -0.270387, 
+    -0.96175), cameraTarget=(0.355483, 0.171733, -0.0876411))
+mdb.save()
+#: The model database has been saved to "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure_Box With Holes.cae".
+mdb.saveAs(
+    pathName='C:\\Users\\chs17004\\Desktop\\Abaqus Pressure Vessel\\Pressure_Box With Holes.cae')
+#: The model database has been saved to "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure_Box With Holes.cae".

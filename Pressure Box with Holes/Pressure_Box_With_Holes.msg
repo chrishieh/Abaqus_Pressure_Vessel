@@ -1,6 +1,6 @@
 1
 
-   Abaqus 3DEXPERIENCE R2019x                                  Date 06-Oct-2020   Time 12:55:52
+   Abaqus 3DEXPERIENCE R2019x                                  Date 08-Oct-2020   Time 08:23:41
    For use by UNIVERSITY OF CONNECTICUT under license from Dassault Systemes or its subsidiary.
 
                                                                                  
@@ -83,12 +83,7 @@
      MAX. RATIO OF TIME INCREMENT TO STABILITY LIMIT                   1.000    
      FRACTION OF STABILITY LIMIT FOR NEW TIME INCREMENT               0.9500    
      TIME INCREMENT INCREASE FACTOR BEFORE A TIME POINT                1.000    
-
- CONTACT CONTROLS APPLIED TO ALL CONTACT PAIRS:
      GLOBAL STABILIZATION CONTROL IS NOT USED
-     RELATIVE PENETRATION TOLERANCE FOR AUGMENTED LAGRANGE CONTACT:
-          FINITE-SLIDING SURFACE-TO-SURFACE                            5.000E-02
-          OTHERWISE                                                    1.000E-03
 
           PRINT OF INCREMENT NUMBER, TIME, ETC., EVERY    1  INCREMENTS
 
@@ -96,7 +91,7 @@
 
      LINEAR EXTRAPOLATION WILL BE USED
 
-     CHARACTERISTIC ELEMENT LENGTH     4.672E-02
+     CHARACTERISTIC ELEMENT LENGTH     1.128E-02
 
      DETAILS REGARDING ACTUAL SOLUTION WAVEFRONT REQUESTED
 
@@ -111,36 +106,36 @@
 
   INCREMENT     1 STARTS. ATTEMPT NUMBER  1, TIME INCREMENT   1.00    
 
-  NUMBER OF EQUATIONS =      3366     NUMBER OF RHS =    1
-  NUMBER OF FLOATING PT. OPERATIONS =  8.95E+07
+  NUMBER OF EQUATIONS =     27846     NUMBER OF RHS =    1
+  NUMBER OF FLOATING PT. OPERATIONS =  4.49E+09
 
      CHECK POINT   START OF SOLVER    
 
      CHECK POINT  END OF SOLVER       
 
-       ELAPSED USER TIME (SEC)      =   0.0000    
+       ELAPSED USER TIME (SEC)      =  0.50000    
        ELAPSED SYSTEM TIME (SEC)    =   0.0000    
-       ELAPSED TOTAL CPU TIME (SEC) =   0.0000    
-       ELAPSED WALLCLOCK TIME (SEC) =          0
+       ELAPSED TOTAL CPU TIME (SEC) =  0.50000    
+       ELAPSED WALLCLOCK TIME (SEC) =          1
 
                CONVERGENCE CHECKS FOR EQUILIBRIUM ITERATION     1
 
 
- AVERAGE FORCE                       40.5       TIME AVG. FORCE        40.5    
- LARGEST RESIDUAL FORCE            -4.850E-10   AT NODE         57   DOF  2
-   INSTANCE: LONG_SIDE-1                                                                     
- LARGEST INCREMENT OF DISP.        -2.417E-04   AT NODE         57   DOF  2
-   INSTANCE: LONG_SIDE-2                                                                     
- LARGEST CORRECTION TO DISP.       -2.417E-04   AT NODE         57   DOF  2
-   INSTANCE: LONG_SIDE-2                                                                     
+ AVERAGE FORCE                       5.98       TIME AVG. FORCE        5.98    
+ LARGEST RESIDUAL FORCE             5.338E-10   AT NODE        128   DOF  3
+   INSTANCE: BOTTOM-1                                                                        
+ LARGEST INCREMENT OF DISP.         1.538E-04   AT NODE        134   DOF  3
+   INSTANCE: BOTTOM-1                                                                        
+ LARGEST CORRECTION TO DISP.        1.538E-04   AT NODE        134   DOF  3
+   INSTANCE: BOTTOM-1                                                                        
           THE FORCE     EQUILIBRIUM RESPONSE WAS LINEAR IN THIS INCREMENT
 
- AVERAGE MOMENT                      5.25       TIME AVG. MOMENT       5.25    
- LARGEST RESIDUAL MOMENT           -5.160E-12   AT NODE         73   DOF  6
+ AVERAGE MOMENT                     0.617       TIME AVG. MOMENT      0.617    
+ LARGEST RESIDUAL MOMENT            9.279E-12   AT NODE        129   DOF  5
+   INSTANCE: BOTTOM-1                                                                        
+ LARGEST INCREMENT OF ROTATION     -1.762E-03   AT NODE          9   DOF  4
    INSTANCE: LONG_SIDE-2                                                                     
- LARGEST INCREMENT OF ROTATION      2.626E-03   AT NODE        105   DOF  4
-   INSTANCE: LONG_SIDE-2                                                                     
- LARGEST CORRECTION TO ROTATION     2.626E-03   AT NODE        105   DOF  4
+ LARGEST CORRECTION TO ROTATION    -1.762E-03   AT NODE          9   DOF  4
    INSTANCE: LONG_SIDE-2                                                                     
           THE MOMENT    EQUILIBRIUM RESPONSE WAS LINEAR IN THIS INCREMENT
 
@@ -165,7 +160,7 @@
                        1  REORDERING OF EQUATIONS TO MINIMIZE WAVEFRONT
                        0  ADDITIONAL RESIDUAL EVALUATIONS FOR LINE SEARCHES
                        0  ADDITIONAL OPERATOR EVALUATIONS FOR LINE SEARCHES
-                      81  WARNING MESSAGES DURING USER INPUT PROCESSING
+                     152  WARNING MESSAGES DURING USER INPUT PROCESSING
                        0  WARNING MESSAGES DURING ANALYSIS
                        0  ANALYSIS WARNINGS ARE NUMERICAL PROBLEM MESSAGES
                        0  ANALYSIS WARNINGS ARE NEGATIVE EIGENVALUE MESSAGES
@@ -174,7 +169,7 @@
 
 
      JOB TIME SUMMARY
-       USER TIME (SEC)      =   1.1000    
+       USER TIME (SEC)      =   2.6000    
        SYSTEM TIME (SEC)    =  0.20000    
-       TOTAL CPU TIME (SEC) =   1.3000    
-       WALLCLOCK TIME (SEC) =          2
+       TOTAL CPU TIME (SEC) =   2.8000    
+       WALLCLOCK TIME (SEC) =          3

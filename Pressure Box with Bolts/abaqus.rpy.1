@@ -1,0 +1,54 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2019 replay file
+# Internal Version: 2018_09_24-14.41.51 157541
+# Run by chs17004 on Thu Oct  8 08:42:14 2020
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=315.656280517578, 
+    height=249.75)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('Pressure_Box With Bolts.cae')
+#: The model database "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure Box with Bolts\Pressure_Box With Bolts.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['Model-1'].parts['Top_Flange-Copy']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+f, e = p.faces, p.edges
+t = p.MakeSketchTransform(sketchPlane=f[0], sketchUpEdge=e[45], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(-0.055492, 
+    -0.132174, 0.0))
+s = mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=1.82, 
+    gridSpacing=0.04, transform=t)
+g, v, d, c = s.geometry, s.vertices, s.dimensions, s.constraints
+s.setPrimaryObject(option=SUPERIMPOSE)
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+p.projectReferencesOntoSketch(sketch=s, filter=COPLANAR_EDGES)
+s.unsetPrimaryObject()
+del mdb.models['Model-1'].sketches['__profile__']
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+s1 = p.features['Shell planar-1'].sketch
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=s1)
+s2 = mdb.models['Model-1'].sketches['__edit__']
+g, v, d, c = s2.geometry, s2.vertices, s2.dimensions, s2.constraints
+s2.setPrimaryObject(option=SUPERIMPOSE)
+p.projectReferencesOntoSketch(sketch=s2, 
+    upToFeature=p.features['Shell planar-1'], filter=COPLANAR_EDGES)
+s2.unsetPrimaryObject()
+del mdb.models['Model-1'].sketches['__edit__']
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+del p.features['Shell planar-1']
+#: Warning: Failed to attach mesh to part geometry.

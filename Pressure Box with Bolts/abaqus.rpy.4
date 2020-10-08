@@ -1,0 +1,183 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2019 replay file
+# Internal Version: 2018_09_24-14.41.51 157541
+# Run by chs17004 on Thu Oct  8 08:55:01 2020
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=315.656280517578, 
+    height=249.75)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('Pressure_Box With Bolts.cae')
+#: The model database "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure Box with Bolts\Pressure_Box With Bolts.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+p1 = mdb.models['Model-1'].parts['Top_Flange-Copy']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+s = mdb.models['Model-1'].ConstrainedSketch(name='__profile__', 
+    sheetSize=200.0)
+g, v, d, c = s.geometry, s.vertices, s.dimensions, s.constraints
+s.setPrimaryObject(option=STANDALONE)
+s.unsetPrimaryObject()
+del mdb.models['Model-1'].sketches['__profile__']
+p1 = mdb.models['Model-1'].parts['Top_Flange-Copy']
+session.viewports['Viewport: 1'].setValues(displayedObject=p1)
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+f, e = p.faces, p.edges
+t = p.MakeSketchTransform(sketchPlane=f[0], sketchUpEdge=e[45], 
+    sketchPlaneSide=SIDE1, sketchOrientation=RIGHT, origin=(-0.055492, 
+    -0.132174, 0.0))
+s1 = mdb.models['Model-1'].ConstrainedSketch(name='__profile__', 
+    sheetSize=1.82, gridSpacing=0.04, transform=t)
+g, v, d, c = s1.geometry, s1.vertices, s1.dimensions, s1.constraints
+s1.setPrimaryObject(option=SUPERIMPOSE)
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+p.projectReferencesOntoSketch(sketch=s1, filter=COPLANAR_EDGES)
+s1.rectangle(point1=(-0.413760138881737, 0.19126031463867), point2=(
+    0.413759861118263, -0.19125968536133))
+s1.rectangle(point1=(-0.375000138881737, 0.15250031463867), point2=(
+    0.374999861118263, -0.15249968536133))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.79105, 
+    farPlane=1.85556, width=0.344873, height=0.213228, cameraPosition=(
+    -0.332159, -0.02624, 1.82331), cameraTarget=(-0.332159, -0.02624, 
+    6.00812e-18))
+s1.CircleByCenterPerimeter(center=(-0.394380138881737, 0.17188031463867), 
+    point1=(-0.394380138881737, 0.16625031463867))
+s1.CircleByCenterPerimeter(center=(-0.322646229791737, 0.17188031463867), 
+    point1=(-0.321621940574229, 0.166344275296424))
+s1.CircleByCenterPerimeter(center=(-0.250912320701737, 0.17188031463867), 
+    point1=(-0.248958456104706, 0.166600228168121))
+s1.CircleByCenterPerimeter(center=(-0.179178411611737, 0.17188031463867), 
+    point1=(-0.176446083292128, 0.166957786634294))
+s1.CircleByCenterPerimeter(center=(-0.107444502521737, 0.17188031463867), 
+    point1=(-0.107089822788528, 0.166261497833785))
+s1.CircleByCenterPerimeter(center=(-0.394380138881737, 0.10298451463867), 
+    point1=(-0.394380138881737, 0.0973545146386697))
+s1.CircleByCenterPerimeter(center=(-0.394380138881737, 0.0340887146386697), 
+    point1=(-0.394380138881737, 0.0284587146386697))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.78886, 
+    farPlane=1.85776, width=0.368387, height=0.227766, cameraPosition=(
+    -0.316019, -0.210145, 1.82331), cameraTarget=(-0.316019, -0.210145, 
+    6.00812e-18))
+s1.CircleByCenterPerimeter(center=(-0.394380138881737, -0.0340880853613301), 
+    point1=(-0.394380138881737, -0.0284580853613301))
+s1.CircleByCenterPerimeter(center=(-0.394380138881737, -0.10298388536133), 
+    point1=(-0.394380138881737, -0.0973538853613301))
+s1.CircleByCenterPerimeter(center=(-0.394380138881737, -0.17187968536133), 
+    point1=(-0.394380138881737, -0.16624968536133))
+s1.CircleByCenterPerimeter(center=(-0.322646229791737, -0.17187968536133), 
+    point1=(-0.321621940574229, -0.166343646019084))
+s1.CircleByCenterPerimeter(center=(-0.250912320701737, -0.17187968536133), 
+    point1=(-0.248958456104706, -0.166599598890782))
+s1.CircleByCenterPerimeter(center=(-0.179178411611737, -0.17187968536133), 
+    point1=(-0.176446083292128, -0.166957157356955))
+s1.CircleByCenterPerimeter(center=(-0.107444502521737, -0.17187968536133), 
+    point1=(-0.107089822788528, -0.166260868556446))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.78588, 
+    farPlane=1.86073, width=0.400214, height=0.247444, cameraPosition=(
+    0.00690653, -0.22864, 1.82331), cameraTarget=(0.00690653, -0.22864, 
+    6.00812e-18))
+s1.CircleByCenterPerimeter(center=(-0.035710593431737, -0.17187968536133), 
+    point1=(-0.0366876114325903, -0.166335108206487))
+s1.CircleByCenterPerimeter(center=(0.0357103156682625, -0.17187968536133), 
+    point1=(0.0366873336691158, -0.166335108206487))
+s1.CircleByCenterPerimeter(center=(0.107444224758263, -0.17187968536133), 
+    point1=(0.107089545025053, -0.166260868556446))
+#: Warning: Coincident point selected
+s1.CircleByCenterPerimeter(center=(0.179178133848263, -0.17187968536133), 
+    point1=(0.176445805528653, -0.166957157356955))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.79397, 
+    farPlane=1.85265, width=0.313745, height=0.193982, cameraPosition=(
+    0.240151, -0.241737, 1.82331), cameraTarget=(0.240151, -0.241737, 
+    6.00812e-18))
+s1.CircleByCenterPerimeter(center=(0.250912042938263, -0.17187968536133), 
+    point1=(0.248958178341231, -0.166599598890782))
+s1.CircleByCenterPerimeter(center=(0.322645952028263, -0.17187968536133), 
+    point1=(0.321621662810754, -0.166343646019084))
+s1.CircleByCenterPerimeter(center=(0.394379861118263, -0.17187968536133), 
+    point1=(0.394379861118263, -0.16624968536133))
+s1.CircleByCenterPerimeter(center=(0.394379861118263, -0.10298388536133), 
+    point1=(0.394379861118263, -0.0973538853613301))
+s1.CircleByCenterPerimeter(center=(0.394379861118263, -0.0340880853613301), 
+    point1=(0.394379861118263, -0.0284580853613301))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.78926, 
+    farPlane=1.85735, width=0.364091, height=0.22511, cameraPosition=(0.267069, 
+    -0.0988516, 1.82331), cameraTarget=(0.267069, -0.0988516, 6.00812e-18))
+s1.CircleByCenterPerimeter(center=(0.394379861118263, 0.0340887146386697), 
+    point1=(0.394379861118263, 0.0284587146386697))
+s1.CircleByCenterPerimeter(center=(0.394379861118263, 0.10298451463867), 
+    point1=(0.394379861118263, 0.0973545146386697))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.79479, 
+    farPlane=1.85182, width=0.304888, height=0.188506, cameraPosition=(
+    0.230848, 0.0246148, 1.82331), cameraTarget=(0.230848, 0.0246148, 
+    6.00812e-18))
+s1.CircleByCenterPerimeter(center=(0.394379861118263, 0.17188031463867), 
+    point1=(0.394379861118263, 0.16625031463867))
+s1.CircleByCenterPerimeter(center=(0.322645952028263, 0.17188031463867), 
+    point1=(0.321621662810754, 0.166344275296424))
+s1.CircleByCenterPerimeter(center=(0.250912042938263, 0.17188031463867), 
+    point1=(0.248958178341231, 0.166600228168121))
+s1.CircleByCenterPerimeter(center=(0.179178133848263, 0.17188031463867), 
+    point1=(0.176445805528653, 0.166957786634294))
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.78811, 
+    farPlane=1.8585, width=0.376396, height=0.232718, cameraPosition=(
+    0.0230696, 0.049767, 1.82331), cameraTarget=(0.0230696, 0.049767, 
+    6.00812e-18))
+s1.CircleByCenterPerimeter(center=(-0.035710593431737, 0.17188031463867), 
+    point1=(-0.0366876114325903, 0.166335737483827))
+s1.CircleByCenterPerimeter(center=(0.0357103156682625, 0.17188031463867), 
+    point1=(0.0366873336691158, 0.166335737483827))
+s1.CircleByCenterPerimeter(center=(0.107444224758263, 0.17188031463867), 
+    point1=(0.107089545025053, 0.166261497833785))
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+f1, e1 = p.faces, p.edges
+p.SolidExtrude(sketchPlane=f1[0], sketchUpEdge=e1[45], sketchPlaneSide=SIDE1, 
+    sketchOrientation=RIGHT, sketch=s1, depth=0.0254, flipExtrudeDirection=OFF)
+#: Warning: Failed to attach mesh to part geometry.
+s1.unsetPrimaryObject()
+del mdb.models['Model-1'].sketches['__profile__']
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+p.features['Shell planar-1'].suppress()
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+p.features['Shell planar-1'].resume()
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+p.features['Solid extrude-1'].resume()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.28737, 
+    farPlane=2.33384, width=0.613497, height=0.379313, cameraPosition=(
+    -1.76848, 0.401327, 0.256309), cameraUpVector=(0.224676, 0.896144, 
+    -0.382684), cameraTarget=(-0.0434768, -0.135916, 0.0109913))
+p = mdb.models['Model-1'].parts['Top_Flange-Copy']
+s = p.features['Solid extrude-1'].sketch
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=s)
+s2 = mdb.models['Model-1'].sketches['__edit__']
+g, v, d, c = s2.geometry, s2.vertices, s2.dimensions, s2.constraints
+s2.setPrimaryObject(option=SUPERIMPOSE)
+p.projectReferencesOntoSketch(sketch=s2, 
+    upToFeature=p.features['Solid extrude-1'], filter=COPLANAR_EDGES)
+s2.unsetPrimaryObject()
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.28261, 
+    farPlane=2.3386, width=0.946419, height=0.585152, viewOffsetX=0.0379134, 
+    viewOffsetY=-0.00013133)
+del mdb.models['Model-1'].sketches['__edit__']
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.54369, 
+    farPlane=2.1486, width=1.13907, height=0.704261, cameraPosition=(-0.882356, 
+    -0.378167, 1.64512), cameraUpVector=(-0.145663, 0.985505, 0.0869606), 
+    cameraTarget=(-0.0850153, -0.117469, 0.02625), viewOffsetX=0.0456308, 
+    viewOffsetY=-0.000158063)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.65997, 
+    farPlane=2.06439, width=1.22487, height=0.757314, cameraPosition=(
+    -0.370631, 0.142484, 1.82767), cameraUpVector=(0.0908488, 0.98848, 
+    -0.121054), cameraTarget=(-0.0838105, -0.102342, 0.0437813), 
+    viewOffsetX=0.049068, viewOffsetY=-0.000169969)

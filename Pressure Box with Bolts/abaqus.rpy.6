@@ -1,0 +1,31 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 2019 replay file
+# Internal Version: 2018_09_24-14.41.51 157541
+# Run by chs17004 on Thu Oct  8 09:08:07 2020
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(0.0, 0.0), width=387.285949707031, 
+    height=249.75)
+session.viewports['Viewport: 1'].makeCurrent()
+session.viewports['Viewport: 1'].maximize()
+from caeModules import *
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+openMdb('Pressure_Box With Bolts.cae')
+#: The model database "C:\Users\chs17004\Desktop\Abaqus Pressure Vessel\Pressure Box with Bolts\Pressure_Box With Bolts.cae" has been opened.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+session.viewports['Viewport: 1'].partDisplay.geometryOptions.setValues(
+    referenceRepresentation=ON)
+p = mdb.models['Model-1'].parts['Bottom']
+session.viewports['Viewport: 1'].setValues(displayedObject=p)
+session.viewports['Viewport: 1'].view.setValues(nearPlane=1.68515, 
+    farPlane=1.81576, width=0.918934, height=0.487578, viewOffsetX=0.0369983, 
+    viewOffsetY=-0.0124215)
+session.viewports['Viewport: 1'].restore()
+session.viewports['Viewport: 1'].maximize()
